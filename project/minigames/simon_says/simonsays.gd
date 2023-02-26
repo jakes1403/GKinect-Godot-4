@@ -13,6 +13,10 @@ signal playWrong
 signal playDab
 signal playWhip
 
+signal playInstruct
+
+var playGame = true
+
 var rng = RandomNumberGenerator.new()
 
 var counter = 0
@@ -25,8 +29,18 @@ var poseNames = ["attention_l", "attention_r", "dab_l", "dab_r", "gangnam", "nae
 
 var checkingForPose = false
 
+var doneChecked = false
+
+var bodies
+
 func get_current_pose():
-	GKinect.get_bodies()
+	if bodies.size() == 0 and not doneChecked:
+		print("eq")
+		$TimeoutTimer.start(5)
+		doneChecked = true
+	if bodies.size() > 0:
+		doneChecked = false
+		$TimeoutTimer.stop()
 	return poseNames[a.check_for_poses(0)]
 
 func askForPose():
@@ -36,9 +50,18 @@ func askForPose():
 	emit_signal(currentPose)
 	checkingForPose = true
 
+var instruct = false
+
+func doIntro():
+	$Music.stop()
+	emit_signal("playInstruct")
+	instruct = true
+	
+
 func _ready():
 	a.load_model("res://poses/simon_says_model.gkposegroup")
-	askForPose()
+	doIntro()
+	#askForPose()
 
 var speakingGoodBad = false
 
@@ -55,7 +78,14 @@ func wrongPose():
 	speakingGoodBad = true
 
 func _process(delta):
-
+	if Input.is_action_just_pressed("run"):
+		#emit_signal("playInstruct")
+		pass
+	
+	bodies = GKinect.get_bodies()
+	if bodies.size() > 0 and playGame == false:
+		playGame = true
+		doIntro()
 		
 	if (not $SlackTimer.is_stopped()) and checkingForPose:
 		if get_current_pose() == "tpose" and currentPose == "playTpose":
@@ -75,9 +105,19 @@ func _on_horse_done_speaking():
 		$SlackTimer.start()
 	if speakingGoodBad:
 		speakingGoodBad = false
+		if playGame == true:
+			askForPose()
+	if instruct:
+		instruct = false
+		$Music.play()
 		askForPose()
 
 
 func _on_slack_timer_timeout():
 	if checkingForPose:
 		wrongPose()
+
+
+func _on_timeout_timer_timeout():
+	playGame = false
+	$Music.stop()

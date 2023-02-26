@@ -2,6 +2,12 @@ extends AnimatedSprite2D
 
 signal doneSpeaking
 
+func playInstruct():
+	frame = 0
+	play("simoninstructs")
+	$Instruct.connect("finished", done)
+	$Instruct.play(0.5)
+
 func playWhip():
 	frame = 0
 	play("whip")

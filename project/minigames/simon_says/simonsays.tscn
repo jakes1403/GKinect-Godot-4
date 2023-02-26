@@ -9,4 +9,9 @@ script = ExtResource("1_2lmdj")
 wait_time = 2.0
 one_shot = true
 
+[node name="TimeoutTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="timeout" from="SlackTimer" to="." method="_on_slack_timer_timeout"]
+[connection signal="timeout" from="TimeoutTimer" to="." method="_on_timeout_timer_timeout"]
