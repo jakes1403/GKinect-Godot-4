@@ -38,20 +38,24 @@ func askForPose():
 
 func _ready():
 	a.load_model("res://poses/simon_says_model.gkposegroup")
+	askForPose()
+
+var speakingGoodBad = false
 
 func correctPose():
 	checkingForPose = false
 	$SlackTimer.stop()
 	emit_signal("playGoodJob")
 	print("Correct pose: " + currentPose)
+	speakingGoodBad = true
 
 func wrongPose():
 	checkingForPose = false
 	emit_signal("playWrong")
+	speakingGoodBad = true
 
 func _process(delta):
-	if Input.is_action_just_pressed("run"):
-		askForPose()
+
 		
 	if (not $SlackTimer.is_stopped()) and checkingForPose:
 		if get_current_pose() == "tpose" and currentPose == "playTpose":
@@ -69,6 +73,9 @@ func _process(delta):
 func _on_horse_done_speaking():
 	if checkingForPose:
 		$SlackTimer.start()
+	if speakingGoodBad:
+		speakingGoodBad = false
+		askForPose()
 
 
 func _on_slack_timer_timeout():
