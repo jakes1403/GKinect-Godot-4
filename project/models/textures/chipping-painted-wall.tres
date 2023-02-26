@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://2kkaitfr87q7"]
+
+[ext_resource type="Texture2D" uid="uid://c2n5ehi1duql6" path="res://textures/chipping-painted-wall.png" id="1_y1q2k"]
+[ext_resource type="Texture2D" uid="uid://b26qgpk8etn01" path="res://textures/pbr/chipping-painted-wall_ao.png" id="2_3druy"]
+[ext_resource type="Texture2D" uid="uid://cd62p084g142s" path="res://textures/pbr/chipping-painted-wall_normal-ogl.png" id="3_7nimg"]
+
+[resource]
+albedo_texture = ExtResource("1_y1q2k")
+metallic = 1.0
+normal_enabled = true
+normal_texture = ExtResource("3_7nimg")
+ao_enabled = true
+ao_texture = ExtResource("2_3druy")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_3druy")

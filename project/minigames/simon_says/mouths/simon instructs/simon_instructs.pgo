@@ -1,0 +1,137 @@
+lipsync version 1
+simon_instructs.wav
+24
+342
+1
+	Voice 1
+	to play my game|simply stand behind the red line|and contort your vessel|into the pose i instruct you to.|shall we begin?
+	5
+		to play my game
+		11
+		59
+		4
+			to 11 20 2
+				11 etc
+				16 U
+			play 21 35 3
+				21 MBP
+				26 L
+				31 E
+			my 36 44 2
+				36 MBP
+				41 AI
+			game 45 59 3
+				45 etc
+				50 E
+				55 MBP
+		simply stand behind the red line
+		80
+		151
+		6
+			simply 80 96 6
+				80 etc
+				83 AI
+				86 MBP
+				88 MBP
+				91 L
+				94 E
+			stand 97 110 5
+				97 etc
+				100 etc
+				103 AI
+				105 L
+				108 etc
+			behind 112 127 6
+				112 MBP
+				115 AI
+				117 etc
+				120 AI
+				123 L
+				125 etc
+			the 129 133 2
+				129 etc
+				132 AI
+			red 135 141 3
+				135 etc
+				137 E
+				140 etc
+			line 143 151 3
+				143 L
+				146 AI
+				149 L
+		and contort your vessel
+		167
+		203
+		4
+			and 167 172 3
+				167 AI
+				169 L
+				171 etc
+			contort 173 186 7
+				173 etc
+				175 AI
+				177 L
+				179 etc
+				181 O
+				183 etc
+				185 etc
+			your 188 192 3
+				188 etc
+				190 O
+				191 etc
+			vessel 194 203 5
+				194 FV
+				196 E
+				198 etc
+				200 AI
+				202 L
+		into the pose i instruct you to.
+		215
+		267
+		7
+			into 215 223 4
+				215 AI
+				217 L
+				220 etc
+				222 U
+			the 225 228 2
+				225 etc
+				227 AI
+			pose 229 235 3
+				229 MBP
+				231 O
+				234 etc
+			i 237 238 1
+				237 AI
+			instruct 239 257 8
+				239 AI
+				241 L
+				244 etc
+				246 etc
+				249 etc
+				251 AI
+				253 etc
+				256 etc
+			you 258 261 2
+				258 etc
+				260 U
+			to. 263 267 2
+				263 etc
+				266 U
+		shall we begin?
+		303
+		328
+		3
+			shall 303 310 3
+				303 etc
+				306 AI
+				308 L
+			we 311 315 2
+				311 WQ
+				314 E
+			begin? 316 328 5
+				316 MBP
+				319 AI
+				321 etc
+				324 AI
+				326 L
