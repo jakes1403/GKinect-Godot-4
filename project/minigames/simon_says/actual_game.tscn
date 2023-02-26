@@ -1,0 +1,373 @@
+[gd_scene load_steps=273 format=3 uid="uid://dswm3hkru1icv"]
+
+[ext_resource type="Texture2D" uid="uid://ceuj8aspip3b1" path="res://minigames/simon_says/scene.png" id="1_gyl8d"]
+[ext_resource type="PackedScene" uid="uid://b43wwi4oukiht" path="res://minigames/simon_says/simonsays.tscn" id="1_hbynf"]
+[ext_resource type="Texture2D" uid="uid://b6cdjl6ddu7wh" path="res://minigames/simon_says/mouths/gangnam/gangnam000000etc.png" id="3_lwcfy"]
+[ext_resource type="Texture2D" uid="uid://re14wbc67ffc" path="res://minigames/simon_says/mouths/tpose/tpose1000001etc.png" id="3_qn6hm"]
+[ext_resource type="Texture2D" uid="uid://dio1uxipex2o2" path="res://minigames/simon_says/mouths/attention/attention000003rest.png" id="3_v74yo"]
+[ext_resource type="Texture2D" uid="uid://dc2we8trq8h81" path="res://minigames/simon_says/mouths/tpose/tpose1000002etc.png" id="4_hjb4m"]
+[ext_resource type="Texture2D" uid="uid://dtd3pihammt1y" path="res://minigames/simon_says/mouths/attention/attention000004rest.png" id="4_jn618"]
+[ext_resource type="Texture2D" uid="uid://cw37y32tq02a" path="res://minigames/simon_says/mouths/gangnam/gangnam000001E.png" id="4_lh8wo"]
+[ext_resource type="Texture2D" uid="uid://dttici3gryf5a" path="res://minigames/simon_says/mouths/tpose/tpose1000003E.png" id="5_5ak20"]
+[ext_resource type="Texture2D" uid="uid://djbapqtmnguap" path="res://minigames/simon_says/mouths/gangnam/gangnam000002MBP.png" id="5_amrk0"]
+[ext_resource type="Texture2D" uid="uid://d3mhskuflsadu" path="res://minigames/simon_says/mouths/attention/attention000005etc.png" id="5_ii17v"]
+[ext_resource type="Texture2D" uid="uid://hnb0lcg6fbip" path="res://minigames/simon_says/mouths/attention/attention000006etc.png" id="6_bi7bf"]
+[ext_resource type="Texture2D" uid="uid://bb8e2g2qd711x" path="res://minigames/simon_says/mouths/tpose/tpose1000004E.png" id="6_fd8ll"]
+[ext_resource type="Texture2D" uid="uid://cmtuoeaadrf5o" path="res://minigames/simon_says/mouths/gangnam/gangnam000003L.png" id="6_hq7ck"]
+[ext_resource type="Texture2D" uid="uid://bokg6iupieqv0" path="res://minigames/simon_says/mouths/gangnam/gangnam000004rest.png" id="7_80ndk"]
+[ext_resource type="Texture2D" uid="uid://dp0fuyyjbypkc" path="res://minigames/simon_says/mouths/tpose/tpose1000005MBP.png" id="7_80y1k"]
+[ext_resource type="Texture2D" uid="uid://f3w4q1tbrcx5" path="res://minigames/simon_says/mouths/attention/attention000007E.png" id="7_ytyv1"]
+[ext_resource type="Texture2D" uid="uid://ch0lfrgsx2xyv" path="res://minigames/simon_says/mouths/attention/attention000008MBP.png" id="8_6aavc"]
+[ext_resource type="Texture2D" uid="uid://cgu5ee3bnuiwr" path="res://minigames/simon_says/mouths/tpose/tpose1000006AI.png" id="8_38anb"]
+[ext_resource type="Texture2D" uid="uid://cvkqbu4lskcm8" path="res://minigames/simon_says/mouths/gangnam/gangnam000005rest.png" id="8_ngoxs"]
+[ext_resource type="Texture2D" uid="uid://bvctmt0rp4hw3" path="res://minigames/simon_says/mouths/gangnam/gangnam000006rest.png" id="9_2hys3"]
+[ext_resource type="Texture2D" uid="uid://stswsomd4oy4" path="res://minigames/simon_says/mouths/attention/attention000009AI.png" id="9_e0kb6"]
+[ext_resource type="Texture2D" uid="uid://d3d4tu1jkhsbv" path="res://minigames/simon_says/mouths/tpose/tpose1000007L.png" id="9_h4786"]
+[ext_resource type="Texture2D" uid="uid://yvj5y44gfrj4" path="res://minigames/simon_says/mouths/attention/attention000010AI.png" id="10_5o421"]
+[ext_resource type="Texture2D" uid="uid://cco2peh3lu5ja" path="res://minigames/simon_says/mouths/gangnam/gangnam000007rest.png" id="10_j14n8"]
+[ext_resource type="Texture2D" uid="uid://b76tc4exaqgrp" path="res://minigames/simon_says/mouths/tpose/tpose1000008rest.png" id="10_lpeea"]
+[ext_resource type="Texture2D" uid="uid://cm6nyhyy17kut" path="res://minigames/simon_says/mouths/attention/attention000011L.png" id="11_45mfw"]
+[ext_resource type="Texture2D" uid="uid://dalms2xh2tqyu" path="res://minigames/simon_says/mouths/gangnam/gangnam000008rest.png" id="11_77w5d"]
+[ext_resource type="Texture2D" uid="uid://b6v8nwnft242w" path="res://minigames/simon_says/mouths/tpose/tpose1000009rest.png" id="11_fgvra"]
+[ext_resource type="Texture2D" uid="uid://cyy76qoti2i3" path="res://minigames/simon_says/mouths/attention/attention000012etc.png" id="12_kgte7"]
+[ext_resource type="Texture2D" uid="uid://bea721nyaverk" path="res://minigames/simon_says/mouths/tpose/tpose1000010etc.png" id="12_m3bbb"]
+[ext_resource type="Texture2D" uid="uid://c85qvscrxq8ei" path="res://minigames/simon_says/mouths/gangnam/gangnam000009etc.png" id="12_ruwac"]
+[ext_resource type="Texture2D" uid="uid://dn1dkk66e2qxd" path="res://minigames/simon_says/mouths/gangnam/gangnam000010etc.png" id="13_2knbt"]
+[ext_resource type="Texture2D" uid="uid://bmu3yci6qya07" path="res://minigames/simon_says/mouths/attention/attention000013etc.png" id="13_daueu"]
+[ext_resource type="Texture2D" uid="uid://c8i08m64omii5" path="res://minigames/simon_says/mouths/tpose/tpose1000011etc.png" id="13_y82xu"]
+[ext_resource type="Texture2D" uid="uid://ptwtevhoeruo" path="res://minigames/simon_says/mouths/attention/attention000014etc.png" id="14_15vfl"]
+[ext_resource type="Texture2D" uid="uid://bi2fi20u1t46b" path="res://minigames/simon_says/mouths/tpose/tpose1000012E.png" id="14_abaig"]
+[ext_resource type="Texture2D" uid="uid://b0fx4ey7nabm4" path="res://minigames/simon_says/mouths/gangnam/gangnam000011etc.png" id="14_gt5sm"]
+[ext_resource type="Texture2D" uid="uid://bvwow2xg78gd" path="res://minigames/simon_says/mouths/gangnam/gangnam000012E.png" id="15_4ypfa"]
+[ext_resource type="Texture2D" uid="uid://40vgnm0jnq8b" path="res://minigames/simon_says/mouths/attention/attention000015E.png" id="15_7rq5o"]
+[ext_resource type="Texture2D" uid="uid://cf1bpessph11j" path="res://minigames/simon_says/mouths/tpose/tpose1000013E.png" id="15_cqdh1"]
+[ext_resource type="Texture2D" uid="uid://beej0g5k8unpe" path="res://minigames/simon_says/mouths/gangnam/gangnam000013E.png" id="16_1g544"]
+[ext_resource type="Texture2D" uid="uid://cscoj8by6s5rg" path="res://minigames/simon_says/mouths/tpose/tpose1000014etc.png" id="16_8wo5f"]
+[ext_resource type="Texture2D" uid="uid://d3eseko4ik5em" path="res://minigames/simon_says/mouths/attention/attention000016E.png" id="16_a2sd6"]
+[ext_resource type="Texture2D" uid="uid://wxo1jpe70g6m" path="res://minigames/simon_says/mouths/gangnam/gangnam000014E.png" id="17_844kr"]
+[ext_resource type="Texture2D" uid="uid://dty6h7ycjr84q" path="res://minigames/simon_says/mouths/attention/attention000017etc.png" id="17_mpo4l"]
+[ext_resource type="Texture2D" uid="uid://bafo1u46hn0p1" path="res://minigames/simon_says/mouths/tpose/tpose1000015etc.png" id="17_vll0k"]
+[ext_resource type="Texture2D" uid="uid://cbey0isc1qbfw" path="res://minigames/simon_says/mouths/attention/attention000018etc.png" id="18_hybih"]
+[ext_resource type="Texture2D" uid="uid://chg0nwfxj6num" path="res://minigames/simon_says/mouths/gangnam/gangnam000015E.png" id="18_st8ry"]
+[ext_resource type="Texture2D" uid="uid://ckc5nacwsbg8k" path="res://minigames/simon_says/mouths/tpose/tpose1000016rest.png" id="18_w0hkq"]
+[ext_resource type="Texture2D" uid="uid://bj4xiyrtu46au" path="res://minigames/simon_says/mouths/attention/attention000019etc.png" id="19_2x2x0"]
+[ext_resource type="Texture2D" uid="uid://c63bcetaehknj" path="res://minigames/simon_says/mouths/gangnam/gangnam000016etc.png" id="19_b8poh"]
+[ext_resource type="Texture2D" uid="uid://cu3quwuip2cgv" path="res://minigames/simon_says/mouths/tpose/tpose1000017rest.png" id="19_t84pc"]
+[ext_resource type="Texture2D" uid="uid://17bp54mo7i4p" path="res://minigames/simon_says/mouths/tpose/tpose1000018rest.png" id="20_4y5he"]
+[ext_resource type="Texture2D" uid="uid://5eiodjlknvv8" path="res://minigames/simon_says/mouths/gangnam/gangnam000017etc.png" id="20_33kr7"]
+[ext_resource type="Texture2D" uid="uid://c1awlxuogkkjk" path="res://minigames/simon_says/mouths/attention/attention000020rest.png" id="20_mheom"]
+[ext_resource type="Texture2D" uid="uid://k0ffcyxu8ccp" path="res://minigames/simon_says/mouths/attention/attention000021rest.png" id="21_ltnl2"]
+[ext_resource type="Texture2D" uid="uid://dax5wlyfpk7gp" path="res://minigames/simon_says/mouths/tpose/tpose1000019rest.png" id="21_qh8rn"]
+[ext_resource type="Texture2D" uid="uid://car4wivn2mm77" path="res://minigames/simon_says/mouths/gangnam/gangnam000018etc.png" id="21_xv1qr"]
+[ext_resource type="Texture2D" uid="uid://b70sv7ttdfwci" path="res://minigames/simon_says/mouths/tpose/tpose1000020rest.png" id="22_2ky00"]
+[ext_resource type="Texture2D" uid="uid://bis7cluop76tx" path="res://minigames/simon_says/mouths/gangnam/gangnam000019rest.png" id="22_5peje"]
+[ext_resource type="Texture2D" uid="uid://c3w80sqpttb7o" path="res://minigames/simon_says/mouths/attention/attention000022rest.png" id="22_uwodc"]
+[ext_resource type="Texture2D" uid="uid://b1lcsf82c2iwt" path="res://minigames/simon_says/mouths/gangnam/gangnam000020rest.png" id="23_avl3w"]
+[ext_resource type="Texture2D" uid="uid://bil5bf78ri0gw" path="res://minigames/simon_says/mouths/attention/attention000023rest.png" id="23_bs365"]
+[ext_resource type="Texture2D" uid="uid://c2wwu5jvg38ru" path="res://minigames/simon_says/mouths/tpose/tpose1000021rest.png" id="23_ut3dv"]
+[ext_resource type="Texture2D" uid="uid://co6xje805p1x8" path="res://minigames/simon_says/mouths/tpose/tpose1000022etc.png" id="24_1ol04"]
+[ext_resource type="Texture2D" uid="uid://bhfnane0ajbq" path="res://minigames/simon_says/mouths/attention/attention000024rest.png" id="24_ixosl"]
+[ext_resource type="Texture2D" uid="uid://cts0cxqs2iobp" path="res://minigames/simon_says/mouths/gangnam/gangnam000021rest.png" id="24_v7pbg"]
+[ext_resource type="Texture2D" uid="uid://b0u1etcd4c76v" path="res://minigames/simon_says/mouths/attention/attention000025rest.png" id="25_3hivd"]
+[ext_resource type="Texture2D" uid="uid://ccresqvsydt31" path="res://minigames/simon_says/mouths/tpose/tpose1000023etc.png" id="25_cppwh"]
+[ext_resource type="Texture2D" uid="uid://e7cce2bqms7d" path="res://minigames/simon_says/mouths/gangnam/gangnam000022rest.png" id="25_mhdbe"]
+[ext_resource type="Texture2D" uid="uid://bkl6rl84atj53" path="res://minigames/simon_says/mouths/gangnam/gangnam000023rest.png" id="26_00rjw"]
+[ext_resource type="Texture2D" uid="uid://b7myc8pcxmrw4" path="res://minigames/simon_says/mouths/attention/attention000026rest.png" id="26_ckpbu"]
+[ext_resource type="Texture2D" uid="uid://cdgmeny3hcwb" path="res://minigames/simon_says/mouths/tpose/tpose1000024etc.png" id="26_d3ap1"]
+[ext_resource type="Texture2D" uid="uid://c16uribnpr3iq" path="res://minigames/simon_says/mouths/gangnam/gangnam000024rest.png" id="27_0t2au"]
+[ext_resource type="Texture2D" uid="uid://byrd1x270wvmf" path="res://minigames/simon_says/mouths/attention/attention000027rest.png" id="27_k0x5l"]
+[ext_resource type="Texture2D" uid="uid://dq8q58asruduy" path="res://minigames/simon_says/mouths/tpose/tpose1000025etc.png" id="27_oskat"]
+[ext_resource type="Texture2D" uid="uid://c3gece5xs5081" path="res://minigames/simon_says/mouths/gangnam/gangnam000025rest.png" id="28_i336v"]
+[ext_resource type="Texture2D" uid="uid://d0514tobyy1lb" path="res://minigames/simon_says/mouths/tpose/tpose1000026etc.png" id="28_n65na"]
+[ext_resource type="Texture2D" uid="uid://cc2ykc3axqwid" path="res://minigames/simon_says/mouths/attention/attention000028rest.png" id="28_xt0m4"]
+[ext_resource type="Texture2D" uid="uid://cctymsqosa1js" path="res://minigames/simon_says/mouths/gangnam/gangnam000026rest.png" id="29_2oh0n"]
+[ext_resource type="Texture2D" uid="uid://dpl0pf8gk0n21" path="res://minigames/simon_says/mouths/tpose/tpose1000027E.png" id="29_p2qqj"]
+[ext_resource type="Texture2D" uid="uid://ci05kkkgfrj35" path="res://minigames/simon_says/mouths/attention/attention000029rest.png" id="29_ptr7u"]
+[ext_resource type="Texture2D" uid="uid://5sutt0uap17y" path="res://minigames/simon_says/mouths/tpose/tpose1000028E.png" id="30_nbyvm"]
+[ext_resource type="Texture2D" uid="uid://css0hhkg4sggh" path="res://minigames/simon_says/mouths/attention/attention000030rest.png" id="30_neljk"]
+[ext_resource type="Texture2D" uid="uid://d3edgxc5wrsx8" path="res://minigames/simon_says/mouths/gangnam/gangnam000027rest.png" id="30_wf7qq"]
+[ext_resource type="Texture2D" uid="uid://bwp3xm5kase4w" path="res://minigames/simon_says/mouths/tpose/tpose1000029E.png" id="31_oo1ad"]
+[ext_resource type="Texture2D" uid="uid://d2n1qpjf3fykh" path="res://minigames/simon_says/mouths/gangnam/gangnam000028rest.png" id="31_qreoc"]
+[ext_resource type="Texture2D" uid="uid://c3p4012wrwcjt" path="res://minigames/simon_says/mouths/attention/attention000031rest.png" id="31_r85uo"]
+[ext_resource type="Texture2D" uid="uid://dfnweox5aqbum" path="res://minigames/simon_says/mouths/gangnam/gangnam000029rest.png" id="32_8gn8e"]
+[ext_resource type="Texture2D" uid="uid://bktxx6uh2fi33" path="res://minigames/simon_says/mouths/attention/attention000032AI.png" id="32_jfk51"]
+[ext_resource type="Texture2D" uid="uid://dtjq2tmjiklfc" path="res://minigames/simon_says/mouths/tpose/tpose1000030E.png" id="32_oc1sa"]
+[ext_resource type="Texture2D" uid="uid://dha8vstj3otj2" path="res://minigames/simon_says/mouths/tpose/tpose1000031E.png" id="33_0x2bo"]
+[ext_resource type="Texture2D" uid="uid://eox3mjxnlk8b" path="res://minigames/simon_says/mouths/gangnam/gangnam000030etc.png" id="33_8sfrd"]
+[ext_resource type="Texture2D" uid="uid://dv8k1plj4jg3l" path="res://minigames/simon_says/mouths/attention/attention000033AI.png" id="33_hhdt1"]
+[ext_resource type="Texture2D" uid="uid://7vjvccaq2sb8" path="res://minigames/simon_says/mouths/tpose/tpose1000032MBP.png" id="34_0i8av"]
+[ext_resource type="Texture2D" uid="uid://i31a2fc1xyun" path="res://minigames/simon_says/mouths/attention/attention000034etc.png" id="34_16c4w"]
+[ext_resource type="Texture2D" uid="uid://8kel7o205l67" path="res://minigames/simon_says/mouths/gangnam/gangnam000031AI.png" id="34_vm01t"]
+[ext_resource type="Texture2D" uid="uid://dcxet4d0m56tg" path="res://minigames/simon_says/mouths/tpose/tpose1000033MBP.png" id="35_d2haa"]
+[ext_resource type="Texture2D" uid="uid://d4lw0kmor7pai" path="res://minigames/simon_says/mouths/gangnam/gangnam000032L.png" id="35_eubeu"]
+[ext_resource type="Texture2D" uid="uid://ce8buxao30xno" path="res://minigames/simon_says/mouths/attention/attention000035E.png" id="35_x2ux8"]
+[ext_resource type="Texture2D" uid="uid://b18cgsbm1u02p" path="res://minigames/simon_says/mouths/gangnam/gangnam000033L.png" id="36_cwnmq"]
+[ext_resource type="Texture2D" uid="uid://chertn2x65kal" path="res://minigames/simon_says/mouths/attention/attention000036E.png" id="36_hxpd6"]
+[ext_resource type="Texture2D" uid="uid://ci3faev54mp5o" path="res://minigames/simon_says/mouths/tpose/tpose1000034O.png" id="36_vu4qp"]
+[ext_resource type="Texture2D" uid="uid://lkfqlss8gabh" path="res://minigames/simon_says/mouths/tpose/tpose1000035O.png" id="37_2rlas"]
+[ext_resource type="Texture2D" uid="uid://batbuoqi78f5k" path="res://minigames/simon_says/mouths/gangnam/gangnam000034AI.png" id="37_3hqkn"]
+[ext_resource type="Texture2D" uid="uid://e65tqxh1vmep" path="res://minigames/simon_says/mouths/attention/attention000037L.png" id="37_82bt1"]
+[ext_resource type="Texture2D" uid="uid://dj0npw14odvse" path="res://minigames/simon_says/mouths/gangnam/gangnam000035MBP.png" id="38_2y8f4"]
+[ext_resource type="Texture2D" uid="uid://n30miwyg07o0" path="res://minigames/simon_says/mouths/tpose/tpose1000036O.png" id="38_f1lig"]
+[ext_resource type="Texture2D" uid="uid://b08ix004su53h" path="res://minigames/simon_says/mouths/attention/attention000038etc.png" id="38_o0fxs"]
+[ext_resource type="Script" path="res://minigames/simon_says/Horse.gd" id="38_ovokw"]
+[ext_resource type="Texture2D" uid="uid://ci3vhgqq2cep1" path="res://minigames/simon_says/mouths/tpose/tpose1000037etc.png" id="39_2ek00"]
+[ext_resource type="Texture2D" uid="uid://bdlr62cvx8a46" path="res://minigames/simon_says/mouths/attention/attention000039etc.png" id="39_4vu35"]
+[ext_resource type="Texture2D" uid="uid://b7vky5umpuby8" path="res://minigames/simon_says/mouths/gangnam/gangnam000036rest.png" id="39_mmu3n"]
+[ext_resource type="Texture2D" uid="uid://dkstwg7d8eg1n" path="res://minigames/simon_says/mouths/tpose/tpose1000038etc.png" id="40_10ihl"]
+[ext_resource type="Texture2D" uid="uid://bv2jrututgy6i" path="res://minigames/simon_says/mouths/attention/attention000040AI.png" id="40_cqn4l"]
+[ext_resource type="Texture2D" uid="uid://j4wyhex88xfy" path="res://minigames/simon_says/mouths/gangnam/gangnam000037rest.png" id="40_e6fct"]
+[ext_resource type="Texture2D" uid="uid://co1vudly3on3g" path="res://minigames/simon_says/mouths/gangnam/gangnam000038etc.png" id="41_gawa1"]
+[ext_resource type="Texture2D" uid="uid://d2iw7s31w64ck" path="res://minigames/simon_says/mouths/tpose/tpose1000039rest.png" id="41_omw1h"]
+[ext_resource type="Texture2D" uid="uid://cu2tsmbalr74l" path="res://minigames/simon_says/mouths/attention/attention000041L.png" id="41_x15wi"]
+[ext_resource type="Texture2D" uid="uid://2ir35gltvocg" path="res://minigames/simon_says/mouths/tpose/tpose1000040rest.png" id="42_1sdjr"]
+[ext_resource type="Texture2D" uid="uid://81htsqdcpbfm" path="res://minigames/simon_says/mouths/gangnam/gangnam000039etc.png" id="42_3d5wh"]
+[ext_resource type="Texture2D" uid="uid://dubgrw703ikin" path="res://minigames/simon_says/mouths/attention/attention000042L.png" id="42_av5md"]
+[ext_resource type="Texture2D" uid="uid://cs210drn6l5yn" path="res://minigames/simon_says/mouths/tpose/tpose1000041rest.png" id="43_0kipr"]
+[ext_resource type="Texture2D" uid="uid://dgbfjgv4ebgch" path="res://minigames/simon_says/mouths/attention/attention000043rest.png" id="43_puqdf"]
+[ext_resource type="Texture2D" uid="uid://dyrxs0rp3lx3i" path="res://minigames/simon_says/mouths/gangnam/gangnam000040etc.png" id="43_tbjqg"]
+[ext_resource type="Texture2D" uid="uid://bxl3mvhry4l4j" path="res://minigames/simon_says/mouths/attention/attention000044rest.png" id="44_2dmop"]
+[ext_resource type="Texture2D" uid="uid://boj2olx1vl4ir" path="res://minigames/simon_says/mouths/tpose/tpose1000042rest.png" id="44_8p5y3"]
+[ext_resource type="Texture2D" uid="uid://bmrxg8a53hyet" path="res://minigames/simon_says/mouths/gangnam/gangnam000041AI.png" id="44_hcurg"]
+[ext_resource type="Texture2D" uid="uid://cc4l5cmrlcep7" path="res://minigames/simon_says/mouths/attention/attention000045rest.png" id="45_3w6tq"]
+[ext_resource type="Texture2D" uid="uid://d3xvv6gmlg5si" path="res://minigames/simon_says/mouths/tpose/tpose1000043rest.png" id="45_6568t"]
+[ext_resource type="Texture2D" uid="uid://cvj0hw54rtuhf" path="res://minigames/simon_says/mouths/gangnam/gangnam000042AI.png" id="45_whb1m"]
+[ext_resource type="Texture2D" uid="uid://n2ptd1w3vdwj" path="res://minigames/simon_says/mouths/attention/attention000046rest.png" id="46_6668u"]
+[ext_resource type="Texture2D" uid="uid://c6stau84eyrb3" path="res://minigames/simon_says/mouths/tpose/tpose1000044rest.png" id="46_b43oj"]
+[ext_resource type="Texture2D" uid="uid://2ghmh4eh71se" path="res://minigames/simon_says/mouths/gangnam/gangnam000043L.png" id="46_j5cuc"]
+[ext_resource type="Texture2D" uid="uid://bg3ga2be8042y" path="res://minigames/simon_says/mouths/attention/attention000047rest.png" id="47_8incm"]
+[ext_resource type="Texture2D" uid="uid://ccs1qsh8s0bea" path="res://minigames/simon_says/mouths/tpose/tpose1000045rest.png" id="47_eh6ai"]
+[ext_resource type="Texture2D" uid="uid://b7wqhnpnfwhyb" path="res://minigames/simon_says/mouths/gangnam/gangnam000044rest.png" id="47_qq46n"]
+[ext_resource type="Texture2D" uid="uid://fstfe1okpmck" path="res://minigames/simon_says/mouths/tpose/tpose1000046rest.png" id="48_63a3b"]
+[ext_resource type="Texture2D" uid="uid://cvs6kqm4sw8ml" path="res://minigames/simon_says/mouths/gangnam/gangnam000045rest.png" id="48_h4rjq"]
+[ext_resource type="Texture2D" uid="uid://mtxogta0t5kp" path="res://minigames/simon_says/mouths/dab/dab000002etc.png" id="48_sltf5"]
+[ext_resource type="AudioStream" uid="uid://di5c6qi8ti7st" path="res://minigames/simon_says/audios/gangnam.wav" id="49_1prbx"]
+[ext_resource type="Texture2D" uid="uid://kcujcrvxtwkr" path="res://minigames/simon_says/mouths/gangnam/gangnam000046rest.png" id="49_4tynl"]
+[ext_resource type="Texture2D" uid="uid://4weokevyx52h" path="res://minigames/simon_says/mouths/dab/dab000003E.png" id="49_44ea7"]
+[ext_resource type="Texture2D" uid="uid://vsj4bmfbl3i6" path="res://minigames/simon_says/mouths/tpose/tpose1000047rest.png" id="49_mnodf"]
+[ext_resource type="Texture2D" uid="uid://dx2feh8oyaemw" path="res://minigames/simon_says/mouths/gangnam/gangnam000047rest.png" id="50_88w5d"]
+[ext_resource type="Texture2D" uid="uid://dutyqpaarv5bp" path="res://minigames/simon_says/mouths/tpose/tpose1000048rest.png" id="50_amagr"]
+[ext_resource type="Texture2D" uid="uid://bi4idemxtftop" path="res://minigames/simon_says/mouths/dab/dab000004MBP.png" id="50_vh1xp"]
+[ext_resource type="Texture2D" uid="uid://wfyssf613qbg" path="res://minigames/simon_says/mouths/gangnam/gangnam000048rest.png" id="51_pv5fk"]
+[ext_resource type="Texture2D" uid="uid://dukwxaik37cdi" path="res://minigames/simon_says/mouths/dab/dab000005AI.png" id="51_xdnqu"]
+[ext_resource type="Texture2D" uid="uid://djkm57cpjtx5m" path="res://minigames/simon_says/mouths/dab/dab000006L.png" id="52_54biy"]
+[ext_resource type="Texture2D" uid="uid://dpplxqkqbyam" path="res://minigames/simon_says/mouths/gangnam/gangnam000049rest.png" id="52_01088"]
+[ext_resource type="Texture2D" uid="uid://bn2doq4npuaoa" path="res://minigames/simon_says/mouths/dab/dab000007rest.png" id="53_4fcq3"]
+[ext_resource type="Texture2D" uid="uid://bfvic77bq1w6s" path="res://minigames/simon_says/mouths/gangnam/gangnam000050rest.png" id="53_of1fk"]
+[ext_resource type="Texture2D" uid="uid://cy87i1ylpci7" path="res://minigames/simon_says/mouths/dab/dab000008rest.png" id="54_6itdy"]
+[ext_resource type="Texture2D" uid="uid://c1ocfeonr7i60" path="res://minigames/simon_says/mouths/dab/dab000009etc.png" id="55_q4g8n"]
+[ext_resource type="Texture2D" uid="uid://c1mdslm66ng2g" path="res://minigames/simon_says/mouths/dab/dab000010etc.png" id="56_tajy2"]
+[ext_resource type="Texture2D" uid="uid://cyjo2od7v5opd" path="res://minigames/simon_says/mouths/dab/dab000011E.png" id="57_pf61i"]
+[ext_resource type="Texture2D" uid="uid://jj1qjprlyk4i" path="res://minigames/simon_says/mouths/dab/dab000012E.png" id="58_73ptv"]
+[ext_resource type="Texture2D" uid="uid://dmgwpwbgciw57" path="res://minigames/simon_says/mouths/dab/dab000013etc.png" id="59_5q7yi"]
+[ext_resource type="Texture2D" uid="uid://co5e2fd46cmok" path="res://minigames/simon_says/mouths/dab/dab000014etc.png" id="60_h08eh"]
+[ext_resource type="Texture2D" uid="uid://c1qi8s55jdkta" path="res://minigames/simon_says/mouths/dab/dab000015rest.png" id="61_qn7qe"]
+[ext_resource type="Texture2D" uid="uid://dnqhyvwii67pi" path="res://minigames/simon_says/mouths/dab/dab000016rest.png" id="62_l6fwm"]
+[ext_resource type="Texture2D" uid="uid://l8hfxx2trftc" path="res://minigames/simon_says/mouths/dab/dab000017rest.png" id="63_iglfl"]
+[ext_resource type="Texture2D" uid="uid://b8uerr7ca772n" path="res://minigames/simon_says/mouths/dab/dab000018rest.png" id="64_v3aed"]
+[ext_resource type="Texture2D" uid="uid://4r7n3reshuuo" path="res://minigames/simon_says/mouths/dab/dab000019rest.png" id="65_53qmr"]
+[ext_resource type="Texture2D" uid="uid://c5lt3cea25812" path="res://minigames/simon_says/mouths/dab/dab000020rest.png" id="66_gjk7x"]
+[ext_resource type="Texture2D" uid="uid://dm7tvju44hlly" path="res://minigames/simon_says/mouths/dab/dab000021rest.png" id="67_d1e6b"]
+[ext_resource type="Texture2D" uid="uid://dkov3sqx7nqqi" path="res://minigames/simon_says/mouths/dab/dab000022rest.png" id="68_dkmw5"]
+[ext_resource type="Texture2D" uid="uid://ijkgn84yd5t3" path="res://minigames/simon_says/mouths/dab/dab000023rest.png" id="69_yfrwq"]
+[ext_resource type="Texture2D" uid="uid://bhknohcnmxyig" path="res://minigames/simon_says/mouths/dab/dab000024rest.png" id="70_supl4"]
+[ext_resource type="Texture2D" uid="uid://d3e4kd1b6cif3" path="res://minigames/simon_says/mouths/dab/dab000025rest.png" id="71_rrx3p"]
+[ext_resource type="Texture2D" uid="uid://4holg0uabuww" path="res://minigames/simon_says/mouths/dab/dab000026rest.png" id="72_mw6wu"]
+[ext_resource type="Texture2D" uid="uid://qtxmpx85jn02" path="res://minigames/simon_says/mouths/dab/dab000027rest.png" id="73_tloj7"]
+[ext_resource type="Texture2D" uid="uid://dv6bxph8afb5s" path="res://minigames/simon_says/mouths/dab/dab000028rest.png" id="74_55nv7"]
+[ext_resource type="Texture2D" uid="uid://c7f78pycryy6b" path="res://minigames/simon_says/mouths/dab/dab000029etc.png" id="75_aab1b"]
+[ext_resource type="Texture2D" uid="uid://d3mamxoo1a2u5" path="res://minigames/simon_says/mouths/dab/dab000030etc.png" id="76_q8syp"]
+[ext_resource type="Texture2D" uid="uid://bbqiuq5v6h4cl" path="res://minigames/simon_says/mouths/dab/dab000031etc.png" id="77_3re1w"]
+[ext_resource type="Texture2D" uid="uid://ccreq4a06g58s" path="res://minigames/simon_says/mouths/dab/dab000032AI.png" id="78_e7vsi"]
+[ext_resource type="Texture2D" uid="uid://cvv3v55drwdtc" path="res://minigames/simon_says/mouths/dab/dab000033AI.png" id="79_2njxa"]
+[ext_resource type="Texture2D" uid="uid://du0ab2jmk88io" path="res://minigames/simon_says/mouths/dab/dab000034AI.png" id="80_juf7x"]
+[ext_resource type="Texture2D" uid="uid://b2glmbdtivfm3" path="res://minigames/simon_says/mouths/dab/dab000035MBP.png" id="81_ld45a"]
+[ext_resource type="Texture2D" uid="uid://bjqqebovkhce1" path="res://minigames/simon_says/mouths/dab/dab000036MBP.png" id="82_iuln4"]
+[ext_resource type="Texture2D" uid="uid://b28qiwvcll6il" path="res://minigames/simon_says/mouths/dab/dab000037MBP.png" id="83_gdi1k"]
+[ext_resource type="AudioStream" uid="uid://c4rg8issorjvw" path="res://minigames/simon_says/tpose/tpose1.wav" id="84_vhcbe"]
+[ext_resource type="Texture2D" uid="uid://ki2ff7d8sovu" path="res://minigames/simon_says/mouths/dab/dab000038rest.png" id="84_wo5me"]
+[ext_resource type="Texture2D" uid="uid://ia16d5o78q08" path="res://minigames/simon_says/mouths/dab/dab000039rest.png" id="85_1hl0j"]
+[ext_resource type="Texture2D" uid="uid://dcpjdfc3n1f3c" path="res://minigames/simon_says/mouths/dab/dab000040rest.png" id="86_fkdab"]
+[ext_resource type="Texture2D" uid="uid://cbky4oylxcl8g" path="res://minigames/simon_says/mouths/dab/dab000041rest.png" id="87_cxw6t"]
+[ext_resource type="Texture2D" uid="uid://c06asuw57edmc" path="res://minigames/simon_says/mouths/dab/dab000042rest.png" id="88_atwl3"]
+[ext_resource type="Texture2D" uid="uid://dyhjytly4tu0e" path="res://minigames/simon_says/mouths/goodjob/goodjob000001etc.png" id="99_w1nws"]
+[ext_resource type="Texture2D" uid="uid://kejve142sy4r" path="res://minigames/simon_says/mouths/goodjob/goodjob000002etc.png" id="100_n8tjg"]
+[ext_resource type="Texture2D" uid="uid://qq8h8idqxg4m" path="res://minigames/simon_says/mouths/goodjob/goodjob000003U.png" id="101_5jcr8"]
+[ext_resource type="Texture2D" uid="uid://dw6aksc4dswnx" path="res://minigames/simon_says/mouths/whip/whip000000rest.png" id="102_85svy"]
+[ext_resource type="Texture2D" uid="uid://c5r7xmopcii4t" path="res://minigames/simon_says/mouths/goodjob/goodjob000004U.png" id="102_hggd4"]
+[ext_resource type="Texture2D" uid="uid://bfc33lit4id1c" path="res://minigames/simon_says/mouths/goodjob/goodjob000005etc.png" id="103_gwjwi"]
+[ext_resource type="Texture2D" uid="uid://cnc2papu1b64i" path="res://minigames/simon_says/mouths/whip/whip000001etc.png" id="103_iqlqp"]
+[ext_resource type="Texture2D" uid="uid://derl2r3rh7hr3" path="res://minigames/simon_says/mouths/goodjob/goodjob000006etc.png" id="104_lhkdr"]
+[ext_resource type="Texture2D" uid="uid://02aqsk4i71s0" path="res://minigames/simon_says/mouths/whip/whip000002etc.png" id="104_sikr6"]
+[ext_resource type="Texture2D" uid="uid://cq1t6c5ocivpy" path="res://minigames/simon_says/mouths/goodjob/goodjob000007etc.png" id="105_kg031"]
+[ext_resource type="Texture2D" uid="uid://boc3vu6pn43vs" path="res://minigames/simon_says/mouths/whip/whip000003E.png" id="105_x4yd4"]
+[ext_resource type="Texture2D" uid="uid://8b5gtk3efedm" path="res://minigames/simon_says/mouths/goodjob/goodjob000008etc.png" id="106_6jx0p"]
+[ext_resource type="Texture2D" uid="uid://df602ul4dyhbb" path="res://minigames/simon_says/mouths/whip/whip000004E.png" id="106_kcyj4"]
+[ext_resource type="Texture2D" uid="uid://bbf0ot30187sl" path="res://minigames/simon_says/mouths/goodjob/goodjob000009etc.png" id="107_8ll0t"]
+[ext_resource type="Texture2D" uid="uid://c0m24f3mmu158" path="res://minigames/simon_says/mouths/whip/whip000005MBP.png" id="107_etwv1"]
+[ext_resource type="Texture2D" uid="uid://mlc68py6lbbu" path="res://minigames/simon_says/mouths/whip/whip000006O.png" id="108_ith2s"]
+[ext_resource type="Texture2D" uid="uid://ddb0q08mv54ch" path="res://minigames/simon_says/mouths/goodjob/goodjob000010AI.png" id="108_rakbc"]
+[ext_resource type="Texture2D" uid="uid://b51hx2wyxwvjr" path="res://minigames/simon_says/mouths/whip/whip000007O.png" id="109_3tfmw"]
+[ext_resource type="Texture2D" uid="uid://b7ims5g7yydj1" path="res://minigames/simon_says/mouths/goodjob/goodjob000011AI.png" id="109_5co75"]
+[ext_resource type="Texture2D" uid="uid://4k4ygvw4uohn" path="res://minigames/simon_says/mouths/goodjob/goodjob000012AI.png" id="110_a1of7"]
+[ext_resource type="Texture2D" uid="uid://ccae4ryptpj2s" path="res://minigames/simon_says/mouths/whip/whip000008L.png" id="110_tuxpy"]
+[ext_resource type="Texture2D" uid="uid://mkcxasfiidkt" path="res://minigames/simon_says/mouths/goodjob/goodjob000013AI.png" id="111_brfyk"]
+[ext_resource type="Texture2D" uid="uid://cnf5kftf4x7qa" path="res://minigames/simon_says/mouths/whip/whip000009rest.png" id="111_ggmjn"]
+[ext_resource type="Texture2D" uid="uid://bukf87t4cc0iw" path="res://minigames/simon_says/mouths/goodjob/goodjob000014MBP.png" id="112_24ind"]
+[ext_resource type="Texture2D" uid="uid://bshr5wr3dtfkm" path="res://minigames/simon_says/mouths/whip/whip000010etc.png" id="112_qjrbl"]
+[ext_resource type="Texture2D" uid="uid://cv0wtgn5bv5x1" path="res://minigames/simon_says/mouths/goodjob/goodjob000015MBP.png" id="113_mnds6"]
+[ext_resource type="Texture2D" uid="uid://da76dn8v8472a" path="res://minigames/simon_says/mouths/whip/whip000011etc.png" id="113_qsb07"]
+[ext_resource type="Texture2D" uid="uid://bjf4jqkoyqy01" path="res://minigames/simon_says/mouths/goodjob/goodjob000016MBP.png" id="114_c4ikl"]
+[ext_resource type="Texture2D" uid="uid://bmvpv7cqacxjt" path="res://minigames/simon_says/mouths/whip/whip000012E.png" id="114_msi4e"]
+[ext_resource type="Texture2D" uid="uid://ckb2tyn7tc7qt" path="res://minigames/simon_says/mouths/whip/whip000013etc.png" id="115_5v37g"]
+[ext_resource type="Texture2D" uid="uid://ddyskavarm5wa" path="res://minigames/simon_says/mouths/goodjob/goodjob000017rest.png" id="115_7bfnh"]
+[ext_resource type="Texture2D" uid="uid://c7tvwkidegr3p" path="res://minigames/simon_says/mouths/goodjob/goodjob000018rest.png" id="116_dw0gx"]
+[ext_resource type="Texture2D" uid="uid://3elalsly0qnr" path="res://minigames/simon_says/mouths/whip/whip000014etc.png" id="116_l4l4r"]
+[ext_resource type="Texture2D" uid="uid://durqookvmwalc" path="res://minigames/simon_says/mouths/whip/whip000015rest.png" id="117_0k212"]
+[ext_resource type="Texture2D" uid="uid://bhu0eyfvh8x6" path="res://minigames/simon_says/mouths/goodjob/goodjob000019rest.png" id="117_d6tq8"]
+[ext_resource type="Texture2D" uid="uid://p7capc7lkeae" path="res://minigames/simon_says/mouths/goodjob/goodjob000020rest.png" id="118_8eqol"]
+[ext_resource type="Texture2D" uid="uid://bh0ev02414wuv" path="res://minigames/simon_says/mouths/whip/whip000016rest.png" id="118_w1d8f"]
+[ext_resource type="Texture2D" uid="uid://ciodg8stnsg2o" path="res://minigames/simon_says/mouths/whip/whip000017rest.png" id="119_ckbx5"]
+[ext_resource type="Texture2D" uid="uid://rc32ncsgxe77" path="res://minigames/simon_says/mouths/goodjob/goodjob000021rest.png" id="119_sg5nn"]
+[ext_resource type="Texture2D" uid="uid://pafytqi8kv86" path="res://minigames/simon_says/mouths/whip/whip000018rest.png" id="120_n7nvd"]
+[ext_resource type="Texture2D" uid="uid://b50bmoe6vi1wq" path="res://minigames/simon_says/mouths/whip/whip000019rest.png" id="121_7hr6h"]
+[ext_resource type="Texture2D" uid="uid://c3cwnoshfw0q7" path="res://minigames/simon_says/mouths/whip/whip000020rest.png" id="122_y7cuf"]
+[ext_resource type="Texture2D" uid="uid://78k0x5exbsyx" path="res://minigames/simon_says/mouths/whip/whip000021rest.png" id="123_bxjnk"]
+[ext_resource type="Texture2D" uid="uid://caa7f7ngorl53" path="res://minigames/simon_says/mouths/whip/whip000022rest.png" id="124_tf1o1"]
+[ext_resource type="Texture2D" uid="uid://b0u16eengouu4" path="res://minigames/simon_says/mouths/whip/whip000023rest.png" id="125_cdgkm"]
+[ext_resource type="Texture2D" uid="uid://b5njc7dyspsvk" path="res://minigames/simon_says/mouths/whip/whip000024rest.png" id="126_bmrpj"]
+[ext_resource type="Texture2D" uid="uid://chjkahhortvbq" path="res://minigames/simon_says/mouths/whip/whip000025rest.png" id="127_tnb5i"]
+[ext_resource type="Texture2D" uid="uid://7ak6c5rkoo3g" path="res://minigames/simon_says/mouths/whip/whip000026rest.png" id="128_d7ngk"]
+[ext_resource type="Texture2D" uid="uid://cd2phmfb28q24" path="res://minigames/simon_says/mouths/whip/whip000027WQ.png" id="129_uwt0o"]
+[ext_resource type="Texture2D" uid="uid://dq8apw83dthj0" path="res://minigames/simon_says/mouths/whip/whip000028WQ.png" id="130_y4yyn"]
+[ext_resource type="Texture2D" uid="uid://b17anvo0qnqn1" path="res://minigames/simon_says/mouths/whip/whip000029AI.png" id="131_k634a"]
+[ext_resource type="Texture2D" uid="uid://bb1nic6ywxoqv" path="res://minigames/simon_says/mouths/whip/whip000030AI.png" id="132_rwv6q"]
+[ext_resource type="Texture2D" uid="uid://dwbs84nvkjk3r" path="res://minigames/simon_says/mouths/whip/whip000031MBP.png" id="133_e34tg"]
+[ext_resource type="Texture2D" uid="uid://c7fer2oceyjea" path="res://minigames/simon_says/mouths/whip/whip000032MBP.png" id="134_bb70i"]
+[ext_resource type="Texture2D" uid="uid://bj4g682y6mgi4" path="res://minigames/simon_says/mouths/whip/whip000033rest.png" id="135_7xi5r"]
+[ext_resource type="Texture2D" uid="uid://b7umh4kh5fo42" path="res://minigames/simon_says/mouths/whip/whip000034rest.png" id="136_lqhxv"]
+[ext_resource type="Texture2D" uid="uid://cnjpcihcx671e" path="res://minigames/simon_says/mouths/whip/whip000035rest.png" id="137_uvkew"]
+[ext_resource type="Texture2D" uid="uid://dggaw12mav6nm" path="res://minigames/simon_says/mouths/wrong/wrong000000rest.png" id="183_d4bqp"]
+[ext_resource type="Texture2D" uid="uid://bp7frsmgkel4" path="res://minigames/simon_says/mouths/wrong/wrong000001etc.png" id="184_bsduh"]
+[ext_resource type="Texture2D" uid="uid://bgyfb8qb7kwtn" path="res://minigames/simon_says/mouths/wrong/wrong000002etc.png" id="185_fy6lu"]
+[ext_resource type="Texture2D" uid="uid://bdtkdibey7ay8" path="res://minigames/simon_says/mouths/wrong/wrong000003etc.png" id="186_tbykf"]
+[ext_resource type="Texture2D" uid="uid://cx8butkqxevjl" path="res://minigames/simon_says/mouths/wrong/wrong000004O.png" id="187_sdwgn"]
+[ext_resource type="Texture2D" uid="uid://cnh038no81c6u" path="res://minigames/simon_says/mouths/wrong/wrong000005O.png" id="188_12xht"]
+[ext_resource type="Texture2D" uid="uid://dyp0plt5awe2" path="res://minigames/simon_says/mouths/wrong/wrong000006O.png" id="189_dwcu3"]
+[ext_resource type="Texture2D" uid="uid://4c82glcsxq27" path="res://minigames/simon_says/mouths/wrong/wrong000007O.png" id="190_h5iry"]
+[ext_resource type="Texture2D" uid="uid://bj8n6t0cx5do" path="res://minigames/simon_says/mouths/wrong/wrong000008L.png" id="191_inimy"]
+[ext_resource type="Texture2D" uid="uid://p7b0ri715nh2" path="res://minigames/simon_says/mouths/wrong/wrong000009L.png" id="192_15d3g"]
+[ext_resource type="Texture2D" uid="uid://5vv6k1jcokua" path="res://minigames/simon_says/mouths/wrong/wrong000010L.png" id="193_q5ius"]
+[ext_resource type="Texture2D" uid="uid://di8lc7bktbofu" path="res://minigames/simon_says/mouths/wrong/wrong000011rest.png" id="194_2xeqo"]
+[ext_resource type="Texture2D" uid="uid://bkfwamfna4p2o" path="res://minigames/simon_says/mouths/wrong/wrong000012rest.png" id="195_h0363"]
+[ext_resource type="Texture2D" uid="uid://cn1icvirq1wpt" path="res://minigames/simon_says/mouths/wrong/wrong000013rest.png" id="196_0perc"]
+[ext_resource type="Texture2D" uid="uid://70kjjx03q1wy" path="res://minigames/simon_says/mouths/wrong/wrong000014rest.png" id="197_0j1bt"]
+[ext_resource type="Texture2D" uid="uid://7tg7yrarjopu" path="res://minigames/simon_says/mouths/wrong/wrong000015rest.png" id="198_mlshu"]
+[ext_resource type="Texture2D" uid="uid://dokp20tsbaj51" path="res://minigames/simon_says/mouths/wrong/wrong000016rest.png" id="199_v3frs"]
+[ext_resource type="Texture2D" uid="uid://l0pi28ctytfx" path="res://minigames/simon_says/mouths/wrong/wrong000017rest.png" id="200_rnqyn"]
+[ext_resource type="AudioStream" uid="uid://bwmpimpxkjnfo" path="res://minigames/simon_says/audios/goodjob.wav" id="266_81hnt"]
+[ext_resource type="AudioStream" uid="uid://dtt5mg8rar3mq" path="res://minigames/simon_says/audios/attention.wav" id="267_fspc7"]
+[ext_resource type="AudioStream" uid="uid://cwjst3hicvifx" path="res://minigames/simon_says/audios/wrong.wav" id="268_niofi"]
+[ext_resource type="AudioStream" uid="uid://bky0s5q1ga2a0" path="res://minigames/simon_says/audios/dab.wav" id="269_jrj1k"]
+[ext_resource type="AudioStream" uid="uid://doanl64asmt72" path="res://minigames/simon_says/audios/whip.wav" id="270_dqu3t"]
+[ext_resource type="AudioStream" uid="uid://b8ujogh6bq4st" path="res://minigames/simon_says/downtownFunky.wav" id="271_1rt26"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jb7bj"]
+animations = [{
+"frames": [ExtResource("3_v74yo"), ExtResource("4_jn618"), ExtResource("5_ii17v"), ExtResource("6_bi7bf"), ExtResource("7_ytyv1"), ExtResource("8_6aavc"), ExtResource("9_e0kb6"), ExtResource("10_5o421"), ExtResource("11_45mfw"), ExtResource("12_kgte7"), ExtResource("13_daueu"), ExtResource("14_15vfl"), ExtResource("15_7rq5o"), ExtResource("16_a2sd6"), ExtResource("17_mpo4l"), ExtResource("18_hybih"), ExtResource("19_2x2x0"), ExtResource("20_mheom"), ExtResource("21_ltnl2"), ExtResource("22_uwodc"), ExtResource("23_bs365"), ExtResource("24_ixosl"), ExtResource("25_3hivd"), ExtResource("26_ckpbu"), ExtResource("27_k0x5l"), ExtResource("28_xt0m4"), ExtResource("29_ptr7u"), ExtResource("30_neljk"), ExtResource("31_r85uo"), ExtResource("32_jfk51"), ExtResource("33_hhdt1"), ExtResource("34_16c4w"), ExtResource("35_x2ux8"), ExtResource("36_hxpd6"), ExtResource("37_82bt1"), ExtResource("38_o0fxs"), ExtResource("39_4vu35"), ExtResource("40_cqn4l"), ExtResource("41_x15wi"), ExtResource("42_av5md"), ExtResource("43_puqdf"), ExtResource("44_2dmop"), ExtResource("45_3w6tq"), ExtResource("46_6668u"), ExtResource("47_8incm")],
+"loop": false,
+"name": &"attention",
+"speed": 24.0
+}, {
+"frames": [ExtResource("48_sltf5"), ExtResource("49_44ea7"), ExtResource("50_vh1xp"), ExtResource("51_xdnqu"), ExtResource("52_54biy"), ExtResource("53_4fcq3"), ExtResource("54_6itdy"), ExtResource("55_q4g8n"), ExtResource("56_tajy2"), ExtResource("57_pf61i"), ExtResource("58_73ptv"), ExtResource("59_5q7yi"), ExtResource("60_h08eh"), ExtResource("61_qn7qe"), ExtResource("62_l6fwm"), ExtResource("63_iglfl"), ExtResource("64_v3aed"), ExtResource("65_53qmr"), ExtResource("66_gjk7x"), ExtResource("67_d1e6b"), ExtResource("68_dkmw5"), ExtResource("69_yfrwq"), ExtResource("70_supl4"), ExtResource("71_rrx3p"), ExtResource("72_mw6wu"), ExtResource("73_tloj7"), ExtResource("74_55nv7"), ExtResource("75_aab1b"), ExtResource("76_q8syp"), ExtResource("77_3re1w"), ExtResource("78_e7vsi"), ExtResource("79_2njxa"), ExtResource("80_juf7x"), ExtResource("81_ld45a"), ExtResource("82_iuln4"), ExtResource("83_gdi1k"), ExtResource("84_wo5me"), ExtResource("85_1hl0j"), ExtResource("86_fkdab"), ExtResource("87_cxw6t"), ExtResource("88_atwl3")],
+"loop": false,
+"name": &"dab",
+"speed": 24.0
+}, {
+"frames": [ExtResource("3_lwcfy"), ExtResource("4_lh8wo"), ExtResource("5_amrk0"), ExtResource("6_hq7ck"), ExtResource("7_80ndk"), ExtResource("8_ngoxs"), ExtResource("9_2hys3"), ExtResource("10_j14n8"), ExtResource("11_77w5d"), ExtResource("12_ruwac"), ExtResource("13_2knbt"), ExtResource("14_gt5sm"), ExtResource("15_4ypfa"), ExtResource("16_1g544"), ExtResource("17_844kr"), ExtResource("18_st8ry"), ExtResource("19_b8poh"), ExtResource("20_33kr7"), ExtResource("21_xv1qr"), ExtResource("22_5peje"), ExtResource("23_avl3w"), ExtResource("24_v7pbg"), ExtResource("25_mhdbe"), ExtResource("26_00rjw"), ExtResource("27_0t2au"), ExtResource("28_i336v"), ExtResource("29_2oh0n"), ExtResource("30_wf7qq"), ExtResource("31_qreoc"), ExtResource("32_8gn8e"), ExtResource("33_8sfrd"), ExtResource("34_vm01t"), ExtResource("35_eubeu"), ExtResource("36_cwnmq"), ExtResource("37_3hqkn"), ExtResource("38_2y8f4"), ExtResource("39_mmu3n"), ExtResource("40_e6fct"), ExtResource("41_gawa1"), ExtResource("42_3d5wh"), ExtResource("43_tbjqg"), ExtResource("44_hcurg"), ExtResource("45_whb1m"), ExtResource("46_j5cuc"), ExtResource("47_qq46n"), ExtResource("48_h4rjq"), ExtResource("49_4tynl"), ExtResource("50_88w5d"), ExtResource("51_pv5fk"), ExtResource("52_01088"), ExtResource("53_of1fk")],
+"loop": false,
+"name": &"gangnam",
+"speed": 24.0
+}, {
+"frames": [ExtResource("99_w1nws"), ExtResource("100_n8tjg"), ExtResource("101_5jcr8"), ExtResource("102_hggd4"), ExtResource("103_gwjwi"), ExtResource("104_lhkdr"), ExtResource("105_kg031"), ExtResource("106_6jx0p"), ExtResource("107_8ll0t"), ExtResource("108_rakbc"), ExtResource("109_5co75"), ExtResource("110_a1of7"), ExtResource("111_brfyk"), ExtResource("112_24ind"), ExtResource("113_mnds6"), ExtResource("114_c4ikl"), ExtResource("115_7bfnh"), ExtResource("116_dw0gx"), ExtResource("117_d6tq8"), ExtResource("118_8eqol"), ExtResource("119_sg5nn")],
+"loop": false,
+"name": &"goodjob",
+"speed": 24.0
+}, {
+"frames": [ExtResource("3_qn6hm"), ExtResource("4_hjb4m"), ExtResource("5_5ak20"), ExtResource("6_fd8ll"), ExtResource("7_80y1k"), ExtResource("8_38anb"), ExtResource("9_h4786"), ExtResource("10_lpeea"), ExtResource("11_fgvra"), ExtResource("12_m3bbb"), ExtResource("13_y82xu"), ExtResource("14_abaig"), ExtResource("15_cqdh1"), ExtResource("16_8wo5f"), ExtResource("17_vll0k"), ExtResource("18_w0hkq"), ExtResource("19_t84pc"), ExtResource("20_4y5he"), ExtResource("21_qh8rn"), ExtResource("22_2ky00"), ExtResource("23_ut3dv"), ExtResource("24_1ol04"), ExtResource("25_cppwh"), ExtResource("26_d3ap1"), ExtResource("27_oskat"), ExtResource("28_n65na"), ExtResource("29_p2qqj"), ExtResource("30_nbyvm"), ExtResource("31_oo1ad"), ExtResource("32_oc1sa"), ExtResource("33_0x2bo"), ExtResource("34_0i8av"), ExtResource("35_d2haa"), ExtResource("36_vu4qp"), ExtResource("37_2rlas"), ExtResource("38_f1lig"), ExtResource("39_2ek00"), ExtResource("40_10ihl"), ExtResource("41_omw1h"), ExtResource("42_1sdjr"), ExtResource("43_0kipr"), ExtResource("44_8p5y3"), ExtResource("45_6568t"), ExtResource("46_b43oj"), ExtResource("47_eh6ai"), ExtResource("48_63a3b"), ExtResource("49_mnodf"), ExtResource("50_amagr")],
+"loop": false,
+"name": &"tpose",
+"speed": 24.0
+}, {
+"frames": [ExtResource("102_85svy"), ExtResource("103_iqlqp"), ExtResource("104_sikr6"), ExtResource("105_x4yd4"), ExtResource("106_kcyj4"), ExtResource("107_etwv1"), ExtResource("108_ith2s"), ExtResource("109_3tfmw"), ExtResource("110_tuxpy"), ExtResource("111_ggmjn"), ExtResource("112_qjrbl"), ExtResource("113_qsb07"), ExtResource("114_msi4e"), ExtResource("115_5v37g"), ExtResource("116_l4l4r"), ExtResource("117_0k212"), ExtResource("118_w1d8f"), ExtResource("119_ckbx5"), ExtResource("120_n7nvd"), ExtResource("121_7hr6h"), ExtResource("122_y7cuf"), ExtResource("123_bxjnk"), ExtResource("124_tf1o1"), ExtResource("125_cdgkm"), ExtResource("126_bmrpj"), ExtResource("127_tnb5i"), ExtResource("128_d7ngk"), ExtResource("129_uwt0o"), ExtResource("130_y4yyn"), ExtResource("131_k634a"), ExtResource("132_rwv6q"), ExtResource("133_e34tg"), ExtResource("134_bb70i"), ExtResource("135_7xi5r"), ExtResource("136_lqhxv"), ExtResource("137_uvkew")],
+"loop": false,
+"name": &"whip",
+"speed": 24.0
+}, {
+"frames": [ExtResource("183_d4bqp"), ExtResource("184_bsduh"), ExtResource("185_fy6lu"), ExtResource("186_tbykf"), ExtResource("187_sdwgn"), ExtResource("188_12xht"), ExtResource("189_dwcu3"), ExtResource("190_h5iry"), ExtResource("191_inimy"), ExtResource("192_15d3g"), ExtResource("193_q5ius"), ExtResource("194_2xeqo"), ExtResource("195_h0363"), ExtResource("196_0perc"), ExtResource("197_0j1bt"), ExtResource("198_mlshu"), ExtResource("199_v3frs"), ExtResource("200_rnqyn")],
+"loop": false,
+"name": &"wrong",
+"speed": 24.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="simonsays" parent="." instance=ExtResource("1_hbynf")]
+
+[node name="Scene" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_gyl8d")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -14)
+current = true
+zoom = Vector2(7.5, 7.5)
+
+[node name="Horse" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4, -23)
+frames = SubResource("SpriteFrames_jb7bj")
+animation = &"dab"
+script = ExtResource("38_ovokw")
+
+[node name="TPose" type="AudioStreamPlayer" parent="Horse"]
+stream = ExtResource("84_vhcbe")
+volume_db = 4.105
+
+[node name="Gangnam" type="AudioStreamPlayer" parent="Horse"]
+stream = ExtResource("49_1prbx")
+volume_db = 4.105
+
+[node name="GoodJob" type="AudioStreamPlayer" parent="Horse"]
+stream = ExtResource("266_81hnt")
+volume_db = 4.105
+
+[node name="Attention" type="AudioStreamPlayer" parent="Horse"]
+stream = ExtResource("267_fspc7")
+volume_db = 4.105
+
+[node name="Wrong" type="AudioStreamPlayer" parent="Horse"]
+stream = ExtResource("268_niofi")
+volume_db = 4.105
+
+[node name="Dab" type="AudioStreamPlayer" parent="Horse"]
+stream = ExtResource("269_jrj1k")
+volume_db = 4.105
+
+[node name="Whip" type="AudioStreamPlayer" parent="Horse"]
+stream = ExtResource("270_dqu3t")
+volume_db = 4.105
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("271_1rt26")
+volume_db = -5.473
+autoplay = true
+
+[connection signal="playAttention" from="simonsays" to="Horse" method="playAttention"]
+[connection signal="playDab" from="simonsays" to="Horse" method="playDab"]
+[connection signal="playGangnam" from="simonsays" to="Horse" method="playGangnam"]
+[connection signal="playGoodJob" from="simonsays" to="Horse" method="playGoodJob"]
+[connection signal="playTpose" from="simonsays" to="Horse" method="playTpose"]
+[connection signal="playWhip" from="simonsays" to="Horse" method="playWhip"]
+[connection signal="playWrong" from="simonsays" to="Horse" method="playWrong"]
+[connection signal="doneSpeaking" from="Horse" to="simonsays" method="_on_horse_done_speaking"]

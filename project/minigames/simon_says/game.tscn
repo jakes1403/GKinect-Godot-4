@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu7526oisw4f4"]
+
+[ext_resource type="PackedScene" uid="uid://dswm3hkru1icv" path="res://minigames/simon_says/actual_game.tscn" id="2_ngrs0"]
+[ext_resource type="Material" uid="uid://c1uccxoeoayv1" path="res://minigames/simon_says/crt-lottes.tres" id="40_qgxil"]
+
+[node name="game" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="SubViewportContainer" parent="CanvasLayer/Panel"]
+material = ExtResource("40_qgxil")
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Panel/ColorRect"]
+handle_input_locally = false
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(480, 720)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Node2D" parent="CanvasLayer/Panel/ColorRect/SubViewport" instance=ExtResource("2_ngrs0")]

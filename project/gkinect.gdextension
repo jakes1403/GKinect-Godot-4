@@ -1,0 +1,8 @@
+[configuration]
+
+entry_symbol = "gkinect_library_init"
+
+[libraries]
+
+windows.x86_64.debug = "res://bin/libgkinect.windows.template_debug.x86_64.dll"
+windows.x86_64.release = "res://bin/summator/libgdsummator.windows.template_release.x86_64.dll"

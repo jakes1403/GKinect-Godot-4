@@ -1,0 +1,36 @@
+lipsync version 1
+C:\Users\tyler\Desktop\GKinect Godot 4\project\minigames\simon_says\audios\gangnam.wav
+24
+85
+1
+	Voice 1
+	sie mun says gang nam style
+	1
+		sie mun says gang nam style
+		0
+		50
+		6
+			sie 0 1 2
+				0 etc
+				1 E
+			mun 2 3 3
+				2 MBP
+				3 AI
+				3 L
+			says 9 18 3
+				9 etc
+				12 E
+				16 etc
+			gang 30 32 3
+				30 etc
+				31 AI
+				32 L
+			nam 33 35 3
+				33 L
+				34 AI
+				35 MBP
+			style 38 43 4
+				38 etc
+				40 etc
+				41 AI
+				43 L
