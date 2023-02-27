@@ -13,5 +13,10 @@ one_shot = true
 wait_time = 10.0
 one_shot = true
 
+[node name="FaxTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="timeout" from="SlackTimer" to="." method="_on_slack_timer_timeout"]
 [connection signal="timeout" from="TimeoutTimer" to="." method="_on_timeout_timer_timeout"]
+[connection signal="timeout" from="FaxTimer" to="." method="_on_fax_timer_timeout"]

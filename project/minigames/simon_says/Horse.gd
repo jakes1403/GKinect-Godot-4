@@ -2,6 +2,17 @@ extends AnimatedSprite2D
 
 signal doneSpeaking
 
+func playFax():
+	frame = 0
+	play("fax")
+	$Fax.connect("finished", done)
+	$Fax.play()
+
+func stopFax():
+	frame = 0
+	stop()
+	$Fax.stop()
+
 func playInstruct():
 	frame = 0
 	play("simoninstructs")
@@ -54,3 +65,6 @@ func playTpose():
 
 func done():
 	emit_signal("doneSpeaking")
+
+
+

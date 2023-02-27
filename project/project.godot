@@ -10,15 +10,16 @@ config_version=5
 
 [application]
 
-config/name="GKinect Godot 4"
+config/name="Simon Says"
 run/main_scene="res://minigames/simon_says/game.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://minigames/simon_says/mouths/simon spits fax/fax000023rest.png"
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

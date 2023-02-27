@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtn4hkyvmt80b"
+path="res://.godot/imported/simon spits fax.wav-0f8317880370c56d01ed7a80e024496c.sample"
+
+[deps]
+
+source_file="res://minigames/simon_says/audios/simon spits fax.wav"
+dest_files=["res://.godot/imported/simon spits fax.wav-0f8317880370c56d01ed7a80e024496c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

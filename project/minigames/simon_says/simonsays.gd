@@ -15,6 +15,9 @@ signal playWhip
 
 signal playInstruct
 
+signal playFax
+signal stopFax
+
 var playGame = true
 
 var rng = RandomNumberGenerator.new()
@@ -84,6 +87,7 @@ func _process(delta):
 	
 	bodies = GKinect.get_bodies()
 	if bodies.size() > 0 and playGame == false:
+		emit_signal("stopFax")
 		playGame = true
 		doIntro()
 		
@@ -118,6 +122,14 @@ func _on_slack_timer_timeout():
 		wrongPose()
 
 
+
+
 func _on_timeout_timer_timeout():
 	playGame = false
 	$Music.stop()
+	$FaxTimer.start(30)
+
+
+func _on_fax_timer_timeout():
+	if playGame == false:
+		emit_signal("playFax")
