@@ -2,16 +2,27 @@ extends AnimatedSprite2D
 
 signal doneSpeaking
 
+var timed = 0
+
 func playFax():
-	frame = 0
-	play("fax")
 	$Fax.connect("finished", done)
-	$Fax.play()
+	$FaxBackwards.connect("finished", done)
+	timed+=1
+	frame = 0
+	var backwards = timed % 2 == 0
+	if not backwards:
+		play("fax")
+		$Fax.play()
+	else:
+		play_backwards("fax")
+		$FaxBackwards.play()
+	
 
 func stopFax():
 	frame = 0
 	stop()
 	$Fax.stop()
+	$FaxBackwards.stop()
 
 func playInstruct():
 	frame = 0

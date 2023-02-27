@@ -90,6 +90,7 @@ func _process(delta):
 	if bodies.size() > 0 and playGame == false:
 		emit_signal("stopFax")
 		playGame = true
+		doneChecked = false
 		doIntro()
 		
 	if (not $SlackTimer.is_stopped()) and checkingForPose:
@@ -104,6 +105,7 @@ func _process(delta):
 		elif (get_current_pose() == "whip_l" or get_current_pose() == "whip_r") and currentPose == "playWhip":
 			correctPose()
 
+var fax = false
 
 func _on_horse_done_speaking():
 	if checkingForPose:
@@ -116,6 +118,11 @@ func _on_horse_done_speaking():
 		instruct = false
 		$Music.play()
 		askForPose()
+	if fax:
+		fax = false
+		if playGame == false:
+			$FaxTimer.start(rng.randi_range(20, 45))
+			emit_signal("playFax")
 
 
 func _on_slack_timer_timeout():
@@ -123,14 +130,14 @@ func _on_slack_timer_timeout():
 		wrongPose()
 
 
-
-
 func _on_timeout_timer_timeout():
 	playGame = false
 	$Music.stop()
-	$FaxTimer.start(30)
+	
+	$FaxTimer.start(rng.randi_range(20, 45))
 
 
 func _on_fax_timer_timeout():
 	if playGame == false:
 		emit_signal("playFax")
+		fax = true

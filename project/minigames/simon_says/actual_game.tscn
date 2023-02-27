@@ -1,4 +1,4 @@
-[gd_scene load_steps=1287 format=3 uid="uid://dswm3hkru1icv"]
+[gd_scene load_steps=1288 format=3 uid="uid://dswm3hkru1icv"]
 
 [ext_resource type="Texture2D" uid="uid://ceuj8aspip3b1" path="res://minigames/simon_says/scene.png" id="1_gyl8d"]
 [ext_resource type="PackedScene" uid="uid://b43wwi4oukiht" path="res://minigames/simon_says/simonsays.tscn" id="1_hbynf"]
@@ -1282,6 +1282,7 @@
 [ext_resource type="Texture2D" uid="uid://cghx44t8nifcq" path="res://minigames/simon_says/mouths/simon spits fax/fax001647etc.png" id="789_muy68"]
 [ext_resource type="Texture2D" uid="uid://da2wrmckodc71" path="res://minigames/simon_says/mouths/simon spits fax/fax001648E.png" id="790_l1r7v"]
 [ext_resource type="AudioStream" uid="uid://dtn4hkyvmt80b" path="res://minigames/simon_says/audios/simon spits fax.wav" id="1274_vujwg"]
+[ext_resource type="AudioStream" uid="uid://d20wdi7v4ppv5" path="res://minigames/simon_says/audios/faxBackward.wav" id="1275_1h6yd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jb7bj"]
 animations = [{
@@ -5207,6 +5208,10 @@ volume_db = 4.105
 
 [node name="Fax" type="AudioStreamPlayer" parent="Horse"]
 stream = ExtResource("1274_vujwg")
+volume_db = 4.105
+
+[node name="FaxBackwards" type="AudioStreamPlayer" parent="Horse"]
+stream = ExtResource("1275_1h6yd")
 volume_db = 4.105
 
 [node name="Instruct" type="AudioStreamPlayer" parent="Horse"]
