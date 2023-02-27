@@ -56,9 +56,10 @@ func askForPose():
 var instruct = false
 
 func doIntro():
-	$Music.stop()
-	emit_signal("playInstruct")
-	instruct = true
+	if playGame:
+		$Music.stop()
+		emit_signal("playInstruct")
+		instruct = true
 	
 
 func _ready():
