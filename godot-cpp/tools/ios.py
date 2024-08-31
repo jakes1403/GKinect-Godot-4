@@ -1,41 +1,37 @@
+import codecs
 import os
-import sys
 import subprocess
-import ios_osxcross
-from SCons.Variables import *
+import sys
 
-if sys.version_info < (3,):
+import common_compiler_flags
+from SCons.Variables import BoolVariable
 
-    def decode_utf8(x):
-        return x
 
-else:
-    import codecs
-
-    def decode_utf8(x):
-        return codecs.utf_8_decode(x)[0]
+def has_ios_osxcross():
+    return "OSXCROSS_IOS" in os.environ
 
 
 def options(opts):
     opts.Add(BoolVariable("ios_simulator", "Target iOS Simulator", False))
-    opts.Add("ios_min_version", "Target minimum iphoneos/iphonesimulator version", "10.0")
+    opts.Add("ios_min_version", "Target minimum iphoneos/iphonesimulator version", "12.0")
     opts.Add(
         "IOS_TOOLCHAIN_PATH",
         "Path to iOS toolchain",
         "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain",
     )
     opts.Add("IOS_SDK_PATH", "Path to the iOS SDK", "")
-    ios_osxcross.options(opts)
+
+    if has_ios_osxcross():
+        opts.Add("ios_triple", "Triple for ios toolchain", "")
 
 
 def exists(env):
-    return sys.platform == "darwin" or ios_osxcross.exists(env)
+    return sys.platform == "darwin" or has_ios_osxcross()
 
 
 def generate(env):
     if env["arch"] not in ("universal", "arm64", "x86_64"):
-        print("Only universal, arm64, and x86_64 are supported on iOS. Exiting.")
-        Exit()
+        raise ValueError("Only universal, arm64, and x86_64 are supported on iOS. Exiting.")
 
     if env["ios_simulator"]:
         sdk_name = "iphonesimulator"
@@ -47,9 +43,9 @@ def generate(env):
     if sys.platform == "darwin":
         if env["IOS_SDK_PATH"] == "":
             try:
-                env["IOS_SDK_PATH"] = decode_utf8(
+                env["IOS_SDK_PATH"] = codecs.utf_8_decode(
                     subprocess.check_output(["xcrun", "--sdk", sdk_name, "--show-sdk-path"]).strip()
-                )
+                )[0]
             except (subprocess.CalledProcessError, OSError):
                 raise ValueError(
                     "Failed to find SDK path while running xcrun --sdk {} --show-sdk-path.".format(sdk_name)
@@ -64,7 +60,26 @@ def generate(env):
         env["ENV"]["PATH"] = env["IOS_TOOLCHAIN_PATH"] + "/Developer/usr/bin/:" + env["ENV"]["PATH"]
 
     else:
-        ios_osxcross.generate(env)
+        # OSXCross
+        compiler_path = "$IOS_TOOLCHAIN_PATH/usr/bin/${ios_triple}"
+        env["CC"] = compiler_path + "clang"
+        env["CXX"] = compiler_path + "clang++"
+        env["AR"] = compiler_path + "ar"
+        env["RANLIB"] = compiler_path + "ranlib"
+        env["SHLIBSUFFIX"] = ".dylib"
+
+        env.Prepend(
+            CPPPATH=[
+                "$IOS_SDK_PATH/usr/include",
+                "$IOS_SDK_PATH/System/Library/Frameworks/AudioUnit.framework/Headers",
+            ]
+        )
+
+        env.Append(CCFLAGS=["-stdlib=libc++"])
+
+        binpath = os.path.join(env["IOS_TOOLCHAIN_PATH"], "usr", "bin")
+        if binpath not in env["ENV"]["PATH"]:
+            env.PrependENVPath("PATH", binpath)
 
     if env["arch"] == "universal":
         if env["ios_simulator"]:
@@ -79,3 +94,7 @@ def generate(env):
 
     env.Append(CCFLAGS=["-isysroot", env["IOS_SDK_PATH"]])
     env.Append(LINKFLAGS=["-isysroot", env["IOS_SDK_PATH"], "-F" + env["IOS_SDK_PATH"]])
+
+    env.Append(CPPDEFINES=["IOS_ENABLED", "UNIX_ENABLED"])
+
+    common_compiler_flags.generate(env)

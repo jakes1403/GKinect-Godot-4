@@ -33,6 +33,7 @@
 #include <godot_cpp/godot.hpp>
 
 #include <godot_cpp/core/binder_common.hpp>
+#include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
 
 #include <utility>
@@ -45,8 +46,8 @@ GDExtensionTypeFromVariantConstructorFunc Variant::to_type_constructor[Variant::
 void Variant::init_bindings() {
 	// Start from 1 to skip NIL.
 	for (int i = 1; i < VARIANT_MAX; i++) {
-		from_type_constructor[i] = internal::gde_interface->get_variant_from_type_constructor((GDExtensionVariantType)i);
-		to_type_constructor[i] = internal::gde_interface->get_variant_to_type_constructor((GDExtensionVariantType)i);
+		from_type_constructor[i] = internal::gdextension_interface_get_variant_from_type_constructor((GDExtensionVariantType)i);
+		to_type_constructor[i] = internal::gdextension_interface_get_variant_to_type_constructor((GDExtensionVariantType)i);
 	}
 
 	StringName::init_bindings();
@@ -65,19 +66,20 @@ void Variant::init_bindings() {
 	PackedStringArray::init_bindings();
 	PackedVector2Array::init_bindings();
 	PackedVector3Array::init_bindings();
+	PackedVector4Array::init_bindings();
 	PackedColorArray::init_bindings();
 }
 
 Variant::Variant() {
-	internal::gde_interface->variant_new_nil(_native_ptr());
+	internal::gdextension_interface_variant_new_nil(_native_ptr());
 }
 
 Variant::Variant(GDExtensionConstVariantPtr native_ptr) {
-	internal::gde_interface->variant_new_copy(_native_ptr(), native_ptr);
+	internal::gdextension_interface_variant_new_copy(_native_ptr(), native_ptr);
 }
 
 Variant::Variant(const Variant &other) {
-	internal::gde_interface->variant_new_copy(_native_ptr(), other._native_ptr());
+	internal::gdextension_interface_variant_new_copy(_native_ptr(), other._native_ptr());
 }
 
 Variant::Variant(Variant &&other) {
@@ -247,8 +249,12 @@ Variant::Variant(const PackedColorArray &v) {
 	from_type_constructor[PACKED_COLOR_ARRAY](_native_ptr(), v._native_ptr());
 }
 
+Variant::Variant(const PackedVector4Array &v) {
+	from_type_constructor[PACKED_VECTOR4_ARRAY](_native_ptr(), v._native_ptr());
+}
+
 Variant::~Variant() {
-	internal::gde_interface->variant_destroy(_native_ptr());
+	internal::gdextension_interface_variant_destroy(_native_ptr());
 }
 
 Variant::operator bool() const {
@@ -267,12 +273,28 @@ Variant::operator int32_t() const {
 	return static_cast<int32_t>(operator int64_t());
 }
 
+Variant::operator int16_t() const {
+	return static_cast<int16_t>(operator int64_t());
+}
+
+Variant::operator int8_t() const {
+	return static_cast<int8_t>(operator int64_t());
+}
+
 Variant::operator uint64_t() const {
 	return static_cast<uint64_t>(operator int64_t());
 }
 
 Variant::operator uint32_t() const {
 	return static_cast<uint32_t>(operator int64_t());
+}
+
+Variant::operator uint16_t() const {
+	return static_cast<uint16_t>(operator int64_t());
+}
+
+Variant::operator uint8_t() const {
+	return static_cast<uint8_t>(operator int64_t());
 }
 
 Variant::operator double() const {
@@ -286,123 +308,131 @@ Variant::operator float() const {
 }
 
 Variant::operator String() const {
-	String result;
-	to_type_constructor[STRING](result._native_ptr(), _native_ptr());
-	return result;
+	return String(this);
 }
 
 Variant::operator Vector2() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Vector2 result;
 	to_type_constructor[VECTOR2]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Vector2i() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Vector2i result;
 	to_type_constructor[VECTOR2I]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Rect2() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Rect2 result;
 	to_type_constructor[RECT2]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Rect2i() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Rect2i result;
 	to_type_constructor[RECT2I]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Vector3() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Vector3 result;
 	to_type_constructor[VECTOR3]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Vector3i() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Vector3i result;
 	to_type_constructor[VECTOR3I]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Transform2D() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Transform2D result;
 	to_type_constructor[TRANSFORM2D]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Vector4() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Vector4 result;
 	to_type_constructor[VECTOR4]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Vector4i() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Vector4i result;
 	to_type_constructor[VECTOR4I]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Plane() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Plane result;
 	to_type_constructor[PLANE]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Quaternion() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Quaternion result;
 	to_type_constructor[QUATERNION]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator godot::AABB() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	godot::AABB result;
 	to_type_constructor[AABB]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Basis() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Basis result;
 	to_type_constructor[BASIS]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Transform3D() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Transform3D result;
 	to_type_constructor[TRANSFORM3D]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Projection() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Projection result;
 	to_type_constructor[PROJECTION]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator Color() const {
+	// @todo Avoid initializing result before calling constructor (which will initialize it again)
 	Color result;
 	to_type_constructor[COLOR]((GDExtensionTypePtr)&result, _native_ptr());
 	return result;
 }
 
 Variant::operator StringName() const {
-	StringName result;
-	to_type_constructor[STRING_NAME](result._native_ptr(), _native_ptr());
-	return result;
+	return StringName(this);
 }
 
 Variant::operator NodePath() const {
-	NodePath result;
-	to_type_constructor[NODE_PATH](result._native_ptr(), _native_ptr());
-	return result;
+	return NodePath(this);
 }
 
 Variant::operator godot::RID() const {
-	godot::RID result;
-	to_type_constructor[RID](result._native_ptr(), _native_ptr());
-	return result;
+	return godot::RID(this);
 }
 
 Variant::operator Object *() const {
@@ -411,7 +441,7 @@ Variant::operator Object *() const {
 	if (obj == nullptr) {
 		return nullptr;
 	}
-	return reinterpret_cast<Object *>(internal::gde_interface->object_get_instance_binding(obj, internal::token, &Object::___binding_callbacks));
+	return internal::get_object_instance_binding(obj);
 }
 
 Variant::operator ObjectID() const {
@@ -430,86 +460,64 @@ Variant::operator ObjectID() const {
 }
 
 Variant::operator Callable() const {
-	Callable result;
-	to_type_constructor[CALLABLE](result._native_ptr(), _native_ptr());
-	return result;
+	return Callable(this);
 }
 
 Variant::operator Signal() const {
-	Signal result;
-	to_type_constructor[SIGNAL](result._native_ptr(), _native_ptr());
-	return result;
+	return Signal(this);
 }
 
 Variant::operator Dictionary() const {
-	Dictionary result;
-	to_type_constructor[DICTIONARY](result._native_ptr(), _native_ptr());
-	return result;
+	return Dictionary(this);
 }
 
 Variant::operator Array() const {
-	Array result;
-	to_type_constructor[ARRAY](result._native_ptr(), _native_ptr());
-	return result;
+	return Array(this);
 }
 
 Variant::operator PackedByteArray() const {
-	PackedByteArray result;
-	to_type_constructor[PACKED_BYTE_ARRAY](result._native_ptr(), _native_ptr());
-	return result;
+	return PackedByteArray(this);
 }
 
 Variant::operator PackedInt32Array() const {
-	PackedInt32Array result;
-	to_type_constructor[PACKED_INT32_ARRAY](result._native_ptr(), _native_ptr());
-	return result;
+	return PackedInt32Array(this);
 }
 
 Variant::operator PackedInt64Array() const {
-	PackedInt64Array result;
-	to_type_constructor[PACKED_INT64_ARRAY](result._native_ptr(), _native_ptr());
-	return result;
+	return PackedInt64Array(this);
 }
 
 Variant::operator PackedFloat32Array() const {
-	PackedFloat32Array result;
-	to_type_constructor[PACKED_FLOAT32_ARRAY](result._native_ptr(), _native_ptr());
-	return result;
+	return PackedFloat32Array(this);
 }
 
 Variant::operator PackedFloat64Array() const {
-	PackedFloat64Array result;
-	to_type_constructor[PACKED_FLOAT64_ARRAY](result._native_ptr(), _native_ptr());
-	return result;
+	return PackedFloat64Array(this);
 }
 
 Variant::operator PackedStringArray() const {
-	PackedStringArray result;
-	to_type_constructor[PACKED_STRING_ARRAY](result._native_ptr(), _native_ptr());
-	return result;
+	return PackedStringArray(this);
 }
 
 Variant::operator PackedVector2Array() const {
-	PackedVector2Array result;
-	to_type_constructor[PACKED_VECTOR2_ARRAY](result._native_ptr(), _native_ptr());
-	return result;
+	return PackedVector2Array(this);
 }
 
 Variant::operator PackedVector3Array() const {
-	PackedVector3Array result;
-	to_type_constructor[PACKED_VECTOR3_ARRAY](result._native_ptr(), _native_ptr());
-	return result;
+	return PackedVector3Array(this);
 }
 
 Variant::operator PackedColorArray() const {
-	PackedColorArray result;
-	to_type_constructor[PACKED_COLOR_ARRAY](result._native_ptr(), _native_ptr());
-	return result;
+	return PackedColorArray(this);
+}
+
+Variant::operator PackedVector4Array() const {
+	return PackedVector4Array(this);
 }
 
 Variant &Variant::operator=(const Variant &other) {
 	clear();
-	internal::gde_interface->variant_new_copy(_native_ptr(), other._native_ptr());
+	internal::gdextension_interface_variant_new_copy(_native_ptr(), other._native_ptr());
 	return *this;
 }
 
@@ -548,23 +556,23 @@ bool Variant::operator<(const Variant &other) const {
 	return result.operator bool();
 }
 
-void Variant::call(const StringName &method, const Variant **args, int argcount, Variant &r_ret, GDExtensionCallError &r_error) {
-	internal::gde_interface->variant_call(_native_ptr(), method._native_ptr(), reinterpret_cast<GDExtensionConstVariantPtr *>(args), argcount, r_ret._native_ptr(), &r_error);
+void Variant::callp(const StringName &method, const Variant **args, int argcount, Variant &r_ret, GDExtensionCallError &r_error) {
+	internal::gdextension_interface_variant_call(_native_ptr(), method._native_ptr(), reinterpret_cast<GDExtensionConstVariantPtr *>(args), argcount, r_ret._native_ptr(), &r_error);
 }
 
-void Variant::call_static(Variant::Type type, const StringName &method, const Variant **args, int argcount, Variant &r_ret, GDExtensionCallError &r_error) {
-	internal::gde_interface->variant_call_static(static_cast<GDExtensionVariantType>(type), method._native_ptr(), reinterpret_cast<GDExtensionConstVariantPtr *>(args), argcount, r_ret._native_ptr(), &r_error);
+void Variant::callp_static(Variant::Type type, const StringName &method, const Variant **args, int argcount, Variant &r_ret, GDExtensionCallError &r_error) {
+	internal::gdextension_interface_variant_call_static(static_cast<GDExtensionVariantType>(type), method._native_ptr(), reinterpret_cast<GDExtensionConstVariantPtr *>(args), argcount, r_ret._native_ptr(), &r_error);
 }
 
 void Variant::evaluate(const Operator &op, const Variant &a, const Variant &b, Variant &r_ret, bool &r_valid) {
 	GDExtensionBool valid;
-	internal::gde_interface->variant_evaluate(static_cast<GDExtensionVariantOperator>(op), a._native_ptr(), b._native_ptr(), r_ret._native_ptr(), &valid);
+	internal::gdextension_interface_variant_evaluate(static_cast<GDExtensionVariantOperator>(op), a._native_ptr(), b._native_ptr(), r_ret._native_ptr(), &valid);
 	r_valid = PtrToArg<bool>::convert(&valid);
 }
 
 void Variant::set(const Variant &key, const Variant &value, bool *r_valid) {
 	GDExtensionBool valid;
-	internal::gde_interface->variant_set(_native_ptr(), key._native_ptr(), value._native_ptr(), &valid);
+	internal::gdextension_interface_variant_set(_native_ptr(), key._native_ptr(), value._native_ptr(), &valid);
 	if (r_valid) {
 		*r_valid = PtrToArg<bool>::convert(&valid);
 	}
@@ -572,27 +580,27 @@ void Variant::set(const Variant &key, const Variant &value, bool *r_valid) {
 
 void Variant::set_named(const StringName &name, const Variant &value, bool &r_valid) {
 	GDExtensionBool valid;
-	internal::gde_interface->variant_set_named(_native_ptr(), name._native_ptr(), value._native_ptr(), &valid);
+	internal::gdextension_interface_variant_set_named(_native_ptr(), name._native_ptr(), value._native_ptr(), &valid);
 	r_valid = PtrToArg<bool>::convert(&valid);
 }
 
 void Variant::set_indexed(int64_t index, const Variant &value, bool &r_valid, bool &r_oob) {
 	GDExtensionBool valid, oob;
-	internal::gde_interface->variant_set_indexed(_native_ptr(), index, value._native_ptr(), &valid, &oob);
+	internal::gdextension_interface_variant_set_indexed(_native_ptr(), index, value._native_ptr(), &valid, &oob);
 	r_valid = PtrToArg<bool>::convert(&valid);
 	r_oob = PtrToArg<bool>::convert(&oob);
 }
 
 void Variant::set_keyed(const Variant &key, const Variant &value, bool &r_valid) {
 	GDExtensionBool valid;
-	internal::gde_interface->variant_set_keyed(_native_ptr(), key._native_ptr(), value._native_ptr(), &valid);
+	internal::gdextension_interface_variant_set_keyed(_native_ptr(), key._native_ptr(), value._native_ptr(), &valid);
 	r_valid = PtrToArg<bool>::convert(&valid);
 }
 
 Variant Variant::get(const Variant &key, bool *r_valid) const {
 	Variant result;
 	GDExtensionBool valid;
-	internal::gde_interface->variant_get(_native_ptr(), key._native_ptr(), result._native_ptr(), &valid);
+	internal::gdextension_interface_variant_get(_native_ptr(), key._native_ptr(), result._native_ptr(), &valid);
 	if (r_valid) {
 		*r_valid = PtrToArg<bool>::convert(&valid);
 	}
@@ -602,7 +610,7 @@ Variant Variant::get(const Variant &key, bool *r_valid) const {
 Variant Variant::get_named(const StringName &name, bool &r_valid) const {
 	Variant result;
 	GDExtensionBool valid;
-	internal::gde_interface->variant_get_named(_native_ptr(), name._native_ptr(), result._native_ptr(), &valid);
+	internal::gdextension_interface_variant_get_named(_native_ptr(), name._native_ptr(), result._native_ptr(), &valid);
 	r_valid = PtrToArg<bool>::convert(&valid);
 	return result;
 }
@@ -611,7 +619,7 @@ Variant Variant::get_indexed(int64_t index, bool &r_valid, bool &r_oob) const {
 	Variant result;
 	GDExtensionBool valid;
 	GDExtensionBool oob;
-	internal::gde_interface->variant_get_indexed(_native_ptr(), index, result._native_ptr(), &valid, &oob);
+	internal::gdextension_interface_variant_get_indexed(_native_ptr(), index, result._native_ptr(), &valid, &oob);
 	r_valid = PtrToArg<bool>::convert(&valid);
 	r_oob = PtrToArg<bool>::convert(&oob);
 	return result;
@@ -620,7 +628,7 @@ Variant Variant::get_indexed(int64_t index, bool &r_valid, bool &r_oob) const {
 Variant Variant::get_keyed(const Variant &key, bool &r_valid) const {
 	Variant result;
 	GDExtensionBool valid;
-	internal::gde_interface->variant_get_keyed(_native_ptr(), key._native_ptr(), result._native_ptr(), &valid);
+	internal::gdextension_interface_variant_get_keyed(_native_ptr(), key._native_ptr(), result._native_ptr(), &valid);
 	r_valid = PtrToArg<bool>::convert(&valid);
 	return result;
 }
@@ -637,36 +645,38 @@ bool Variant::in(const Variant &index, bool *r_valid) const {
 
 bool Variant::iter_init(Variant &r_iter, bool &r_valid) const {
 	GDExtensionBool valid;
-	internal::gde_interface->variant_iter_init(_native_ptr(), r_iter._native_ptr(), &valid);
-	return PtrToArg<bool>::convert(&valid);
+	GDExtensionBool result = internal::gdextension_interface_variant_iter_init(_native_ptr(), r_iter._native_ptr(), &valid);
+	r_valid = PtrToArg<bool>::convert(&valid);
+	return PtrToArg<bool>::convert(&result);
 }
 
 bool Variant::iter_next(Variant &r_iter, bool &r_valid) const {
 	GDExtensionBool valid;
-	internal::gde_interface->variant_iter_next(_native_ptr(), r_iter._native_ptr(), &valid);
-	return PtrToArg<bool>::convert(&valid);
+	GDExtensionBool result = internal::gdextension_interface_variant_iter_next(_native_ptr(), r_iter._native_ptr(), &valid);
+	r_valid = PtrToArg<bool>::convert(&valid);
+	return PtrToArg<bool>::convert(&result);
 }
 
 Variant Variant::iter_get(const Variant &r_iter, bool &r_valid) const {
 	Variant result;
 	GDExtensionBool valid;
-	internal::gde_interface->variant_iter_get(_native_ptr(), r_iter._native_ptr(), result._native_ptr(), &valid);
+	internal::gdextension_interface_variant_iter_get(_native_ptr(), r_iter._native_ptr(), result._native_ptr(), &valid);
 	r_valid = PtrToArg<bool>::convert(&valid);
 	return result;
 }
 
 Variant::Type Variant::get_type() const {
-	return static_cast<Variant::Type>(internal::gde_interface->variant_get_type(_native_ptr()));
+	return static_cast<Variant::Type>(internal::gdextension_interface_variant_get_type(_native_ptr()));
 }
 
 bool Variant::has_method(const StringName &method) const {
-	GDExtensionBool has = internal::gde_interface->variant_has_method(_native_ptr(), method._native_ptr());
+	GDExtensionBool has = internal::gdextension_interface_variant_has_method(_native_ptr(), method._native_ptr());
 	return PtrToArg<bool>::convert(&has);
 }
 
 bool Variant::has_key(const Variant &key, bool *r_valid) const {
 	GDExtensionBool valid;
-	GDExtensionBool has = internal::gde_interface->variant_has_key(_native_ptr(), key._native_ptr(), &valid);
+	GDExtensionBool has = internal::gdextension_interface_variant_has_key(_native_ptr(), key._native_ptr(), &valid);
 	if (r_valid) {
 		*r_valid = PtrToArg<bool>::convert(&valid);
 	}
@@ -674,33 +684,33 @@ bool Variant::has_key(const Variant &key, bool *r_valid) const {
 }
 
 bool Variant::has_member(Variant::Type type, const StringName &member) {
-	GDExtensionBool has = internal::gde_interface->variant_has_member(static_cast<GDExtensionVariantType>(type), member._native_ptr());
+	GDExtensionBool has = internal::gdextension_interface_variant_has_member(static_cast<GDExtensionVariantType>(type), member._native_ptr());
 	return PtrToArg<bool>::convert(&has);
 }
 
 uint32_t Variant::hash() const {
-	GDExtensionInt hash = internal::gde_interface->variant_hash(_native_ptr());
+	GDExtensionInt hash = internal::gdextension_interface_variant_hash(_native_ptr());
 	return PtrToArg<uint32_t>::convert(&hash);
 }
 
 uint32_t Variant::recursive_hash(int recursion_count) const {
-	GDExtensionInt hash = internal::gde_interface->variant_recursive_hash(_native_ptr(), recursion_count);
+	GDExtensionInt hash = internal::gdextension_interface_variant_recursive_hash(_native_ptr(), recursion_count);
 	return PtrToArg<uint32_t>::convert(&hash);
 }
 
 bool Variant::hash_compare(const Variant &variant) const {
-	GDExtensionBool compare = internal::gde_interface->variant_hash_compare(_native_ptr(), variant._native_ptr());
+	GDExtensionBool compare = internal::gdextension_interface_variant_hash_compare(_native_ptr(), variant._native_ptr());
 	return PtrToArg<bool>::convert(&compare);
 }
 
 bool Variant::booleanize() const {
-	GDExtensionBool booleanized = internal::gde_interface->variant_booleanize(_native_ptr());
+	GDExtensionBool booleanized = internal::gdextension_interface_variant_booleanize(_native_ptr());
 	return PtrToArg<bool>::convert(&booleanized);
 }
 
 String Variant::stringify() const {
 	String result;
-	internal::gde_interface->variant_stringify(_native_ptr(), result._native_ptr());
+	internal::gdextension_interface_variant_stringify(_native_ptr(), result._native_ptr());
 	return result;
 }
 
@@ -708,23 +718,23 @@ Variant Variant::duplicate(bool deep) const {
 	Variant result;
 	GDExtensionBool _deep;
 	PtrToArg<bool>::encode(deep, &_deep);
-	internal::gde_interface->variant_duplicate(_native_ptr(), result._native_ptr(), _deep);
+	internal::gdextension_interface_variant_duplicate(_native_ptr(), result._native_ptr(), _deep);
 	return result;
 }
 
 String Variant::get_type_name(Variant::Type type) {
 	String result;
-	internal::gde_interface->variant_get_type_name(static_cast<GDExtensionVariantType>(type), result._native_ptr());
+	internal::gdextension_interface_variant_get_type_name(static_cast<GDExtensionVariantType>(type), result._native_ptr());
 	return result;
 }
 
 bool Variant::can_convert(Variant::Type from, Variant::Type to) {
-	GDExtensionBool can = internal::gde_interface->variant_can_convert(static_cast<GDExtensionVariantType>(from), static_cast<GDExtensionVariantType>(to));
+	GDExtensionBool can = internal::gdextension_interface_variant_can_convert(static_cast<GDExtensionVariantType>(from), static_cast<GDExtensionVariantType>(to));
 	return PtrToArg<bool>::convert(&can);
 }
 
 bool Variant::can_convert_strict(Variant::Type from, Variant::Type to) {
-	GDExtensionBool can = internal::gde_interface->variant_can_convert_strict(static_cast<GDExtensionVariantType>(from), static_cast<GDExtensionVariantType>(to));
+	GDExtensionBool can = internal::gdextension_interface_variant_can_convert_strict(static_cast<GDExtensionVariantType>(from), static_cast<GDExtensionVariantType>(to));
 	return PtrToArg<bool>::convert(&can);
 }
 
@@ -775,9 +785,9 @@ void Variant::clear() {
 	};
 
 	if (unlikely(needs_deinit[get_type()])) { // Make it fast for types that don't need deinit.
-		internal::gde_interface->variant_destroy(_native_ptr());
+		internal::gdextension_interface_variant_destroy(_native_ptr());
 	}
-	internal::gde_interface->variant_new_nil(_native_ptr());
+	internal::gdextension_interface_variant_new_nil(_native_ptr());
 }
 
 } // namespace godot

@@ -1,0 +1,12 @@
+[configuration]
+
+entry_symbol = "gkinect_library_init"
+
+compatibility_minimum = "4.3.0"
+
+[libraries]
+
+windows.debug.x86_32 = "bin/libgkinect.windows.template_debug.x86_32.dll"
+windows.release.x86_32 = "bin/libgkinect.windows.template_release.x86_32.dll"
+windows.debug.x86_64 = "bin/libgkinect.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "bin/libgkinect.windows.template_release.x86_64.dll"

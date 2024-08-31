@@ -45,7 +45,7 @@ namespace godot {
 
 class RefCounted;
 
-template <class T>
+template <typename T>
 class Ref {
 	T *reference = nullptr;
 
@@ -63,7 +63,7 @@ class Ref {
 	}
 
 	void ref_pointer(T *p_ref) {
-		ERR_FAIL_COND(!p_ref);
+		ERR_FAIL_NULL(p_ref);
 
 		if (p_ref->init_ref()) {
 			reference = p_ref;
@@ -88,26 +88,15 @@ public:
 		return reference != p_r.reference;
 	}
 
-	_FORCE_INLINE_ T *operator->() {
+	_FORCE_INLINE_ T *operator*() const {
 		return reference;
 	}
 
-	_FORCE_INLINE_ T *operator*() {
+	_FORCE_INLINE_ T *operator->() const {
 		return reference;
 	}
 
-	_FORCE_INLINE_ const T *operator->() const {
-		return reference;
-	}
-
-	_FORCE_INLINE_ const T *ptr() const {
-		return reference;
-	}
-	_FORCE_INLINE_ T *ptr() {
-		return reference;
-	}
-
-	_FORCE_INLINE_ const T *operator*() const {
+	_FORCE_INLINE_ T *ptr() const {
 		return reference;
 	}
 
@@ -119,7 +108,7 @@ public:
 		ref(p_from);
 	}
 
-	template <class T_Other>
+	template <typename T_Other>
 	void operator=(const Ref<T_Other> &p_from) {
 		RefCounted *refb = const_cast<RefCounted *>(static_cast<const RefCounted *>(p_from.ptr()));
 		if (!refb) {
@@ -155,7 +144,7 @@ public:
 		}
 	}
 
-	template <class T_Other>
+	template <typename T_Other>
 	void reference_ptr(T_Other *p_ptr) {
 		if (reference == p_ptr) {
 			return;
@@ -172,7 +161,7 @@ public:
 		ref(p_from);
 	}
 
-	template <class T_Other>
+	template <typename T_Other>
 	Ref(const Ref<T_Other> &p_from) {
 		RefCounted *refb = const_cast<RefCounted *>(static_cast<const RefCounted *>(p_from.ptr()));
 		if (!refb) {
@@ -230,21 +219,19 @@ public:
 
 	// Used exclusively in the bindings to recreate the Ref Godot encapsulates in return values,
 	// without adding to the refcount.
-	inline static Ref<T> ___internal_constructor(Object *obj) {
+	inline static Ref<T> _gde_internal_constructor(Object *obj) {
 		Ref<T> r;
 		r.reference = (T *)obj;
 		return r;
 	}
 };
 
-template <class T>
+template <typename T>
 struct PtrToArg<Ref<T>> {
 	_FORCE_INLINE_ static Ref<T> convert(const void *p_ptr) {
 		GDExtensionRefPtr ref = (GDExtensionRefPtr)p_ptr;
-		ERR_FAIL_NULL_V(ref, Ref<T>());
-
-		T *obj = reinterpret_cast<T *>(godot::internal::gde_interface->object_get_instance_binding(godot::internal::gde_interface->ref_get_object(ref), godot::internal::token, &T::___binding_callbacks));
-		return Ref<T>(obj);
+		ERR_FAIL_NULL_V(p_ptr, Ref<T>());
+		return Ref<T>(reinterpret_cast<T *>(godot::internal::get_object_instance_binding(godot::internal::gdextension_interface_ref_get_object(ref))));
 	}
 
 	typedef Ref<T> EncodeT;
@@ -256,34 +243,36 @@ struct PtrToArg<Ref<T>> {
 		// This code assumes that p_ptr points to an unset Ref<T> variable on the Godot side
 		// so we only set it if we have an object to set.
 		if (p_val.is_valid()) {
-			godot::internal::gde_interface->ref_set_object(ref, p_val->_owner);
+			godot::internal::gdextension_interface_ref_set_object(ref, p_val->_owner);
 		}
 	}
 };
 
-template <class T>
+template <typename T>
 struct PtrToArg<const Ref<T> &> {
 	typedef Ref<T> EncodeT;
 
 	_FORCE_INLINE_ static Ref<T> convert(const void *p_ptr) {
-		return Ref<T>(reinterpret_cast<T *>(godot::internal::gde_interface->object_get_instance_binding(*reinterpret_cast<GDExtensionObjectPtr *>(const_cast<void *>(p_ptr)), godot::internal::token, &T::___binding_callbacks)));
+		GDExtensionRefPtr ref = const_cast<GDExtensionRefPtr>(p_ptr);
+		ERR_FAIL_NULL_V(p_ptr, Ref<T>());
+		return Ref<T>(reinterpret_cast<T *>(godot::internal::get_object_instance_binding(godot::internal::gdextension_interface_ref_get_object(ref))));
 	}
 };
 
-template <class T>
+template <typename T>
 struct GetTypeInfo<Ref<T>, typename EnableIf<TypeInherits<RefCounted, T>::value>::type> {
-	static const GDExtensionVariantType VARIANT_TYPE = GDEXTENSION_VARIANT_TYPE_OBJECT;
-	static const GDExtensionClassMethodArgumentMetadata METADATA = GDEXTENSION_METHOD_ARGUMENT_METADATA_NONE;
+	static constexpr GDExtensionVariantType VARIANT_TYPE = GDEXTENSION_VARIANT_TYPE_OBJECT;
+	static constexpr GDExtensionClassMethodArgumentMetadata METADATA = GDEXTENSION_METHOD_ARGUMENT_METADATA_NONE;
 
 	static inline PropertyInfo get_class_info() {
 		return make_property_info(Variant::Type::OBJECT, "", PROPERTY_HINT_RESOURCE_TYPE, T::get_class_static());
 	}
 };
 
-template <class T>
+template <typename T>
 struct GetTypeInfo<const Ref<T> &, typename EnableIf<TypeInherits<RefCounted, T>::value>::type> {
-	static const GDExtensionVariantType VARIANT_TYPE = GDEXTENSION_VARIANT_TYPE_OBJECT;
-	static const GDExtensionClassMethodArgumentMetadata METADATA = GDEXTENSION_METHOD_ARGUMENT_METADATA_NONE;
+	static constexpr GDExtensionVariantType VARIANT_TYPE = GDEXTENSION_VARIANT_TYPE_OBJECT;
+	static constexpr GDExtensionClassMethodArgumentMetadata METADATA = GDEXTENSION_METHOD_ARGUMENT_METADATA_NONE;
 
 	static inline PropertyInfo get_class_info() {
 		return make_property_info(Variant::Type::OBJECT, "", PROPERTY_HINT_RESOURCE_TYPE, T::get_class_static());

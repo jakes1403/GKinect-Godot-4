@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://7b1agiacmwfo"]
+
+[ext_resource type="Texture2D" uid="uid://befedf4kk6j5g" path="res://addons/gkinect/dot.png" id="1_nwjya"]
+
+[node name="point" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(82, 84)
+scale = Vector2(2, 2)
+texture = ExtResource("1_nwjya")

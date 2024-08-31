@@ -18,7 +18,7 @@ env.Append(LINKFLAGS=["C:/Program Files/Microsoft SDKs/Kinect/v2.0_1409/Lib/x64/
 sources = Glob("src/*.cpp")
 
 library = env.SharedLibrary(
-    "project/bin/libgkinect{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+    "project/addons/gkinect/bin/libgkinect{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
     source=sources,
 )
 

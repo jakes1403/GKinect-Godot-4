@@ -52,7 +52,7 @@ class ThreadWorkPool {
 		virtual ~BaseWork() = default;
 	};
 
-	template <class C, class M, class U>
+	template <typename C, typename M, typename U>
 	struct Work : public BaseWork {
 		C *instance;
 		M method;
@@ -94,9 +94,9 @@ class ThreadWorkPool {
 	}
 
 public:
-	template <class C, class M, class U>
+	template <typename C, typename M, typename U>
 	void begin_work(uint32_t p_elements, C *p_instance, M p_method, U p_userdata) {
-		ERR_FAIL_COND(!threads); // never initialized
+		ERR_FAIL_NULL(threads); // Never initialized.
 		ERR_FAIL_COND(current_work != nullptr);
 
 		index.store(0, std::memory_order_release);
@@ -123,18 +123,18 @@ public:
 	}
 
 	bool is_done_dispatching() const {
-		ERR_FAIL_COND_V(current_work == nullptr, true);
+		ERR_FAIL_NULL_V(current_work, true);
 		return index.load(std::memory_order_acquire) >= current_work->max_elements;
 	}
 
 	uint32_t get_work_index() const {
-		ERR_FAIL_COND_V(current_work == nullptr, 0);
+		ERR_FAIL_NULL_V(current_work, 0);
 		uint32_t idx = index.load(std::memory_order_acquire);
 		return Math::min(idx, current_work->max_elements);
 	}
 
 	void end_work() {
-		ERR_FAIL_COND(current_work == nullptr);
+		ERR_FAIL_NULL(current_work);
 		for (uint32_t i = 0; i < threads_working; i++) {
 			threads[i].completed.wait();
 			threads[i].work = nullptr;
@@ -145,7 +145,7 @@ public:
 		current_work = nullptr;
 	}
 
-	template <class C, class M, class U>
+	template <typename C, typename M, typename U>
 	void do_work(uint32_t p_elements, C *p_instance, M p_method, U p_userdata) {
 		switch (p_elements) {
 			case 0:

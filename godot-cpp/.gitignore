@@ -8,7 +8,7 @@
 include/gen
 src/gen
 
-# Build configuarion.
+# Build configuration.
 /custom.py
 
 # Misc
@@ -100,7 +100,7 @@ AppPackages/
 
 # Others
 sql/
-*.Cache
+*.[Cc]ache
 ClientBin/
 [Ss]tyle[Cc]op.*
 ~$*
@@ -191,3 +191,7 @@ godot.creator.*
 
 # compile commands (https://clang.llvm.org/docs/JSONCompilationDatabase.html)
 compile_commands.json
+
+# Python development
+.venv
+venv
