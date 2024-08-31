@@ -76,6 +76,3 @@ func playTpose():
 
 func done():
 	emit_signal("doneSpeaking")
-
-
-

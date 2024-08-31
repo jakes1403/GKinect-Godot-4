@@ -5165,7 +5165,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-9, -0.25, 0, 0.25, 0, -14, -0.25, 0, 0.25, 0, -9, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-9, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, -9, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 2, 5)
 }
 
@@ -5189,6 +5189,8 @@ autoplay = true
 
 [node name="Scene" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, 21)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_gyl8d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -5249,10 +5251,10 @@ energy = 1.91
 texture = ExtResource("545_h5yy0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "new_animation"
 libraries = {
 "": SubResource("AnimationLibrary_xopsn")
 }
+autoplay = "new_animation"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.168627, 0.168627, 0.168627, 1)

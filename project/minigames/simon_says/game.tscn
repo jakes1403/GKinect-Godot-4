@@ -27,7 +27,7 @@ stretch = true
 handle_input_locally = false
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
-size = Vector2i(480, 720)
+size = Vector2i(720, 480)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 

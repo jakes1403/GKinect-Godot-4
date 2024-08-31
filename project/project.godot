@@ -17,8 +17,8 @@ config/icon="res://minigames/simon_says/mouths/simon spits fax/fax000023rest.png
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=720
+window/size/viewport_width=720
+window/size/viewport_height=480
 window/size/mode=3
 window/stretch/mode="canvas_items"
 
